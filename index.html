@@ -1,68 +1,470 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramey Fahal's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="runtime.js"></script> <!-- TeaVM runtime -->
-    <script src="generated.js"></script> <!-- Your compiled JavaScript -->
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+    
+    <!-- title of site -->
+    <title>Ramey Fahal Portfolio</title>
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+   
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <!--flat icon css-->
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--owl.carousel.css-->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="assets/css/bootsnav.css">   
+    
+    <!--style.css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!--responsive.css-->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+
 </head>
+
 <body>
-    <header>
-        <h1>Ramey Fahal's Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Welcome</h2>
-            <p>Explore my journey through education and programming.</p>
-        </section>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hi, I'm Ramey Fahal, a passionate software developer with a strong background in computer science and a minor in Arabic language. I am currently pursuing my Bachelor of Arts in Computer Science at the University of Iowa, and I have an Associate of Applied Science in Computer Software Development from Kirkwood Community College.</p>
-            <p>I have experience in various programming languages and tools, and I'm constantly seeking to learn and improve my skills.</p>
-        </section>
-        <section id="resume">
-            <h2>Resume</h2>
-            <a href="Ramey_Fahal_Resume.pdf" download>Download My Resume</a>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>MusicGame</h3>
-                <p>A rhythm-based game developed in Java. This project showcases my ability to work with object-oriented programming concepts, user interface design, and game mechanics.</p>
-                <div id="game-container"></div> <!-- Container for the game -->
-                <script>
-                    // Initialize your game
-                    main(); // Replace with the entry point of your generated JavaScript code
-                </script>
+
+    <!-- top-area Start -->
+    <header class="top-area">
+        <div class="header-area">
+            <!-- Start Navigation -->
+            <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+
+                <div class="container">
+
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Ramey Fahal</a>
+                    </div><!--/.navbar-header-->
+                    <!-- End Header Navigation -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class=" smooth-menu active"></li>
+                            <li class=" smooth-menu"><a href="#education">education</a></li>
+                            <li class="smooth-menu"><a href="#skills">skills</a></li>
+                            <li class="smooth-menu"><a href="#experience">experience</a></li>
+                            <li class="smooth-menu"><a href="#portfolio">portfolio</a></li>
+                        </ul><!--/.nav -->
+                    </div><!-- /.navbar-collapse -->
+                </div><!--/.container-->
+            </nav><!--/nav-->
+            <!-- End Navigation -->
+        </div><!--/.header-area-->
+
+        <div class="clearfix"></div>
+
+    </header><!-- /.top-area-->
+    <!-- top-area End -->
+
+    <!--welcome-hero start -->
+    <section id="welcome-hero" class="welcome-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="header-text">
+                        <h2>hi <span>,</span> i am <br> Ramey <br> Fahal <span>.</span>   </h2>
+                        <p>IT Specialties Assistant</p>
+                        <a href="Resume.pdf" download>download resume</a>
+                    </div><!--/.header-text-->
+                </div><!--/.col-->
+            </div><!-- /.row-->
+        </div><!-- /.container-->
+
+    </section><!--/.welcome-hero-->
+    <!--welcome-hero end -->
+
+    <!--about start -->
+    <section id="about" class="about">
+        <div class="section-heading text-center">
+            <h2>about me</h2>
+        </div>
+        <div class="container">
+            <div class="about-content">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="single-about-txt">
+                            <h3>
+                                I am a dedicated IT Specialties Assistant at the University of Iowa. I have a diverse set of skills in IT management and development. 
+                            </h3>
+                            <p>
+                                My professional experience includes managing IT infrastructure, developing software solutions, and leading various projects. 
+                                I am committed to continuous learning and applying my knowledge to solve real-world problems.
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="single-about-add-info">
+                                        <h3>phone</h3>
+                                        <p>(555) 123-4567</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="single-about-add-info">
+                                        <h3>email</h3>
+                                        <p>Ramey-Fahal@uiowa.edu</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="single-about-add-info">
+                                        <h3>linkedin</h3>
+                                        <p>linkedin.com/in/rameyfahal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-1 col-sm-5">
+                        <div class="single-about-img">
+                            <img src="assets/images/about/profile.jpg" alt="profile_image">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="project">
-                <h3>University of Iowa Directions Website</h3>
-                <p>A website built to provide clear and concise directions for various locations on the University of Iowa campus.</p>
-                <a href="projects/University_of_Iowa_Directions/index.html">View Project</a>
+        </div>
+    </section><!--/.about-->
+    <!--about end -->
+
+    <!--education start -->
+    <section id="education" class="education">
+        <div class="section-heading text-center">
+            <h2>Education</h2>
+        </div>
+        <div class="container">
+            <div class="education-horizontal-timeline">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="single-horizontal-timeline">
+                            <div class="experience-time">
+                                <h2>05/2025</h2>
+                                <h3>Bachelor of Science in Computer Science</h3>
+                            </div><!--/.experience-time-->
+                            <div class="timeline-horizontal-border">
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                <span class="single-timeline-horizontal"></span>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-content">
+                                    <h4 class="title">
+                                        University of Iowa
+                                    </h4>
+                                    <h5>Iowa City, IA</h5>
+                                    <p class="description">
+                                    </p>
+                                </div><!--/.timeline-content-->
+                            </div><!--/.timeline-->
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me through the following channels:</p>
-            <ul>
-                <li>Email: <a href="mailto:Rameyfahal@outlook.com">Rameyfahal@outlook.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/ramey-fahal">LinkedIn Profile</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Ramey Fahal. All rights reserved.</p>
-    </footer>
+        </div>
+
+    </section><!--/.education-->
+    <!--education end -->
+
+    <!--skills start -->
+    <section id="skills" class="skills">
+        <div class="skill-content">
+            <div class="section-heading text-center">
+                <h2>skills</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="single-skill-content">
+                            <div class="barWrapper">
+                                <span class="progressText">Python</span>
+                                <div class="single-progress-txt">
+                                    <div class="progress ">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+                                        </div>
+                                    </div>
+                                    <h3>90%</h3>   
+                                </div>
+                            </div><!-- /.barWrapper -->
+                            <div class="barWrapper">
+                                <span class="progressText">Java</span>
+                                <div class="single-progress-txt">
+                                    <div class="progress ">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="10" aria-valuemax="100" style="">
+                                       </div>
+                                    </div>
+                                    <h3>85%</h3>   
+                                </div>
+                            </div><!-- /.barWrapper -->
+                            <div class="barWrapper">
+                                <span class="progressText">Git & GitHub</span>
+                                <div class="single-progress-txt">
+                                    <div class="progress ">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="10" aria-valuemax="100" style="">
+                                       </div>
+                                    </div>
+                                    <h3>97%</h3>   
+                                </div>
+                            </div><!-- /.barWrapper -->
+                            <div class="barWrapper">
+                                <span class="progressText">JavaScript</span>
+                                <div class="single-progress-txt">
+                                    <div class="progress ">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+                                       </div>
+                                    </div>
+                                    <h3>90%</h3>   
+                                </div>
+                            </div><!-- /.barWrapper -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="single-skill-content">
+                            <div class="barWrapper">
+                                <span class="progressText">HTML</span>
+                                <div class="single-progress-txt">
+                                    <div class="progress ">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+                                        </div>
+                                    </div>
+                                    <h3>90%</h3>   
+                                </div>
+                            </div><!-- /.barWrapper -->
+                            <div class="barWrapper">
+                                <span class="progressText">CSS</span>
+                                <div class="single-progress-txt">
+                                    <div class="progress ">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="10" aria-valuemax="100" style="">
+                                       </div>
+                                    </div>
+                                    <h3>85%</h3>   
+                                </div>
+                            </div><!-- /.barWrapper -->
+                            <div class="barWrapper">
+                                <span class="progressText">Communication</span>
+                                <div class="single-progress-txt">
+                                    <div class="progress ">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="10" aria-valuemax="100" style="">
+                                       </div>
+                                    </div>
+                                    <h3>97%</h3>   
+                                </div>
+                            </div><!-- /.barWrapper -->
+                            <div class="barWrapper">
+                                <span class="progressText">Creativity</span>
+                                <div class="single-progress-txt">
+                                    <div class="progress ">
+                                       <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="10" aria-valuemax="100" style="">
+                                       </div>
+                                    </div>
+                                    <h3>90%</h3>   
+                                </div>
+                            </div><!-- /.barWrapper -->
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            </div>  <!-- /.container -->        
+        </div><!-- /.skill-content-->
+
+    </section><!--/.skills-->
+    <!--skills end -->
+
+    <!--experience start -->
+    <section id="experience" class="experience">
+        <div class="section-heading text-center">
+            <h2>experience</h2>
+        </div>
+        <div class="container">
+            <div class="experience-content">
+                <div class="main-timeline">
+                    <ul>
+                        <li>
+                            <div class="single-timeline-box fix">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="experience-time text-right">
+                                            <h2>06/2023 - Present</h2>
+                                            <h3>IT Specialties Assistant</h3>
+                                        </div><!--/.experience-time-->
+                                    </div><!--/.col-->
+                                    <div class="col-md-offset-1 col-md-5">
+                                        <div class="timeline">
+                                            <div class="timeline-content">
+                                                <h4 class="title">
+                                                    <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                                    University of Iowa
+                                                </h4>
+                                                <h5>Iowa City, IA</h5>
+                                                <p class="description">
+                                                    Assisting in the management of IT infrastructure, developing software solutions, and leading various projects. 
+                                                </p>
+                                            </div><!--/.timeline-content-->
+                                        </div><!--/.timeline-->
+                                    </div><!--/.col-->
+                                </div>
+                            </div><!--/.single-timeline-box-->
+                        </li>
+
+                        <li>
+                            <div class="single-timeline-box fix">
+                                <div class="row">
+                                    <div class="col-md-offset-1 col-md-5 experience-time-responsive">
+                                        <div class="experience-time">
+                                            <h2>
+                                                <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                                06/2022–08/2022
+                                            </h2>
+                                            <h3>Software Development Intern</h3>
+                                        </div><!--/.experience-time-->
+                                    </div><!--/.col-->
+                                    <div class="col-md-5">
+                                        <div class="timeline">
+                                            <div class="timeline-content text-right">
+                                                <h4 class="title">
+                                                    Galileo Group, Inc
+                                                </h4>
+                                                <h5>Iowa City, IA</h5>
+                                                <p class="description">
+                                                    Developed various software applications, enhancing accuracy and performance.
+                                                </p>
+                                            </div><!--/.timeline-content-->
+                                        </div><!--/.timeline-->
+                                    </div><!--/.col-->
+                                    <div class="col-md-offset-1 col-md-5 experience-time-main">
+                                        <div class="experience-time">
+                                            <h2>
+                                                <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                                06/2022 – 08/2022
+                                            </h2>
+                                            <h3>Software Development Intern</h3>
+                                        </div><!--/.experience-time-->
+                                    </div><!--/.col-->
+                                </div>
+                            </div><!--/.single-timeline-box-->
+                        </li>
+
+                    </ul>
+                </div><!--.main-timeline-->
+            </div><!--.experience-content-->
+        </div>
+
+    </section><!--/.experience-->
+    <!--experience end -->
+
+    <!--portfolio start -->
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-details">
+            <div class="section-heading text-center">
+                <h2>portfolio</h2>
+            </div>
+            <div class="container">
+                <div class="portfolio-content">
+                    <div class="isotope">
+                        <div class="row">
+
+                            <div class="col-sm-4">
+                                <div class="item">
+                                    <img src="assets/images/portfolio/project1.jpg" alt="portfolio image">
+                                    <div class="isotope-overlay">
+                                        <a href="https://github.com/rfahal/project1">
+                                            Project 1
+                                        </a>
+                                    </div><!-- /.isotope-overlay -->
+                                </div><!-- /.item -->
+
+                            </div><!-- /.col -->
+
+
+                            <div class="col-sm-4">
+                                <div class="item">
+                                    <img src="assets/images/portfolio/project2.jpg" alt="portfolio image">
+                                    <div class="isotope-overlay">
+                                        <a href="https://github.com/rfahal/project2">
+                                            Project 2
+                                        </a>
+                                    </div><!-- /.isotope-overlay -->
+                                </div><!-- /.item -->
+
+                            </div>
+                        </div><!-- /.row -->
+                    </div><!--/.isotope-->
+                </div><!--/.gallery-content-->
+            </div><!--/.container-->
+        </div><!--/.portfolio-details-->
+
+    </section><!--/.portfolio-->
+    <!--portfolio end -->
+
+    <!--footer-copyright start-->
+    <footer id="footer-copyright" class="footer-copyright">
+        <div class="container">
+
+        </div><!--/.container-->
+
+        <div id="scroll-Top">
+            <div class="return-to-top">
+                <i class="fa fa-angle-up " id="scroll-top"></i>
+            </div>
+            
+        </div><!--/.scroll-Top-->
+        
+    </footer><!--/.footer-copyright-->
+
+    <script src="assets/js/jquery.js"></script>
+    
+    <!--modernizr.min.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    
+    <!--bootstrap.min.js-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <!-- bootsnav js -->
+    <script src="assets/js/bootsnav.js"></script>
+    
+    <!-- jquery.sticky.js -->
+    <script src="assets/js/jquery.sticky.js"></script>
+    
+    <!-- for progress bar start-->
+
+    <!-- progressbar js -->
+    <script src="assets/js/progressbar.js"></script>
+
+    <!-- appear js -->
+    <script src="assets/js/jquery.appear.js"></script>
+
+    <!-- for progress bar end -->
+
+    <!--owl.carousel.js-->
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    
+    <!--Custom JS-->
+    <script src="assets/js/custom.js"></script>
+    
 </body>
+
 </html>
