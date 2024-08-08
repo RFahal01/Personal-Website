@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicGame</title>
+    <title>Music Game Adventure</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: rgb(245, 245, 220);
+            color: #664321;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,34 +17,69 @@
             justify-content: center;
         }
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #664321;
+            color: rgb(245, 245, 220);
             width: 100%;
             padding: 20px;
             text-align: center;
+            position: relative;
+        }
+        header nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin-left: 10px;
+        }
+        header nav ul li a {
+            background-color: rgb(245, 245, 220);
+            color: #664321;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        header nav ul li a:hover {
+            background-color: #8a5e3a;
         }
         section {
-            background-color: #fff;
+            background-color: rgb(245, 245, 220);
             padding: 20px;
             margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 800px;
             width: 100%;
+            position: relative;
         }
-        h1, h2 {
-            color: #333;
+        h1{
+            color: rgb(245, 245, 220);
+        }
+        h2 {
+            color: #664321;
         }
         p {
             line-height: 1.6;
-            color: #666;
         }
         ul {
             list-style: none;
             padding: 0;
         }
+        li1 {
+            background: rgb(245, 245, 220);
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
         li {
-            background: #eee;
+            background: rgb(245, 245, 220);
             margin: 5px 0;
             padding: 10px;
             border-radius: 4px;
@@ -55,54 +91,79 @@
             margin: 10px 0;
         }
         .code {
-            background-color: #f9f9f9;
+            background-color: rgb(245, 245, 220);
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid rgb(245, 245, 220);
             border-radius: 4px;
             font-family: "Courier New", Courier, monospace;
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00ced1;
+            color: rgb(245, 245, 220);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        footer {
+            background-color: #664321;
+            color: rgb(245, 245, 220);
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            position: relative;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to MusicGame</h1>
+        <h1>Welcome to Music Game Adventure</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Return to RameyFahal.com</a></li>
+            </ul>
+        </nav>
     </header>
-    <section>
-        <h2>What is MusicGame?</h2>
-        <p>MusicGame is a unique combination of rhythm-based gameplay and platformer mechanics. The challenge is to navigate through levels while maintaining the beat, creating an engaging and rhythmic gaming experience.</p>
-        
-        <h2>Objective</h2>
-        <p>The goal of MusicGame is to collect musical notes and avoid obstacles while keeping in time with the music. Higher scores are achieved by maintaining combos and perfectly timing jumps.</p>
-        
-        <h2>Scoring</h2>
+    <section id="introduction" class="fade-in">
+        <h2>Introduction</h2>
+        <p>Welcome to Music Game Adventure, an exciting project where players experience dynamic gameplay filled with challenges and rewards. This game is developed in Java and features intricate game logic that drives player interactions, score tracking, and level progression.</p>
+    </section>
+    <section id="project-description" class="fade-in">
+        <h2>Project Description</h2>
+        <p>Music Game Adventure is a Java-based game that showcases our interests in problem-solving and game development. Our roles involved developing robust game mechanics, ensuring smooth gameplay transitions, and maintaining dynamic player experiences.</p>
+    </section>
+    <section id="game-logic-development" class="fade-in">
+        <h2>Game Logic Development</h2>
+        <p>Developing the game logic involved an iterative process, where we continuously refined parameters and mechanics to achieve balanced gameplay. Our focus was on creating seamless transitions between game states and maintaining player engagement by making the player’s actions directly impact difficulty levels, sound, power-up availability, and scoring mechanics.</p>
+    </section>
+    <section id="core-components" class="fade-in">
+        <h2>Core Components</h2>
         <ul>
-            <li>Points are earned by collecting musical notes.</li>
-            <li>Avoiding obstacles successfully contributes to the score.</li>
-            <li>Maintaining combos and timing jumps perfectly can lead to higher scores.</li>
+            <li><strong>MusicGame:</strong> Controls everything, manages the game and player actions, handles game flow and progression, and adapts with the score.</li>
+            <li><strong>Background:</strong> Sets the scene, handles collisions, adjusts visuals and gameplay elements, and resets for new challenges.</li>
+            <li><strong>Player:</strong> The player's character, moves, scores points, and reacts to collisions, keeping track of progress and special bonuses.</li>
+            <li><strong>Paddle:</strong> Helps control the game by moving and adjusting its size, changing speed and size as you progress.</li>
+            <li><strong>PowerUp:</strong> Provides special boosts during the game, appears randomly, and alters gameplay momentarily.</li>
+            <li><strong>Sound:</strong> Adds music and effects to enhance the game atmosphere, reacts to game events to keep the player engaged.</li>
+            <li><strong>MainMenu:</strong> Starts your adventure, offering options to begin, pause, and restart the game.</li>
         </ul>
-        
-        <h2>Power-ups</h2>
-        <p>Various power-ups are available to enhance gameplay and provide strategic advantages, including:</p>
-        <ul>
-            <li>Speed boosts</li>
-            <li>Invincibility</li>
-            <li>Double points</li>
-        </ul>
-        
-        <h2>Game Mechanics</h2>
-        <p>The main mechanics of the game include:</p>
-        <ul>
-            <li><strong>Background:</strong> Sets the scene for the game.</li>
-            <li><strong>Control:</strong> Player control mechanics.</li>
-            <li><strong>Intersection:</strong> Manages interactions between game elements.</li>
-            <li><strong>MusicGame:</strong> Core game logic.</li>
-            <li><strong>Paddle:</strong> Player's movement mechanism.</li>
-            <li><strong>PowerUp:</strong> Manages power-up mechanics.</li>
-            <li><strong>Player:</strong> The player's character.</li>
-            <li><strong>Sound:</strong> Music and sound effects integration.</li>
-        </ul>
-        <img src="projects/MusicGame/Picture4.png" alt="Game Logic Diagram">
-        
+        <img src="Picture4.png" alt="Game Logic Diagram">
+    </section>
+    <section id="bugs-gameplay-issues" class="fade-in">
         <h2>Bugs and Gameplay Issues</h2>
         <p>During development, several bugs and gameplay issues were encountered:</p>
         <ul>
@@ -112,23 +173,96 @@
             <li>Player gravity and jump height</li>
             <li>Platform quantity</li>
         </ul>
-        <img src="projects/MusicGame/Picture2.gif" alt="Bug and Gameplay Issue 1">
-        <img src="projects/MusicGame/Picture3.gif" alt="Bug and Gameplay Issue 2">
-        
+        <img src="Picture2.gif" alt="Bug and Gameplay Issue 1">
+        <img src="Picture3.gif" alt="Bug and Gameplay Issue 2">
+    </section>
+    <section id="game-main-menu" class="fade-in">
         <h2>Game Main Menu</h2>
         <p>The main menu of the game provides options to start, pause, and restart the game:</p>
-        <img src="projects/MusicGame/Picture5.png" alt="Game Main Menu Description Slide">
-        
+        <img src="Picture5.png" alt="Game Main Menu Description Slide">
+    </section>
+    <section id="game-elements" class="fade-in">
         <h2>Game Elements</h2>
         <ul>
-            <li><img src="projects/MusicGame/Picture6.png" alt="Player"> Player</li>
-            <li><img src="projects/MusicGame/Picture7.png" alt="Paddle"> Paddle</li>
-            <li><img src="projects/MusicGame/Picture8.png" alt="Power Up"> Power Up</li>
+            <li><img src="Picture6.png" alt="Player"> Player</li>
+            <li><img src="Picture7.png" alt="Paddle"> Paddle</li>
+            <li><img src="Picture8.png" alt="Power Up"> Power Up</li>
         </ul>
-        
-        <h2>How to Play</h2>
-        <p>To play MusicGame, extract the <code>Music-Game-main.zip</code> file and open the <code>index.html</code> file in a web browser. Use the arrow keys to navigate and the spacebar to jump. Collect musical notes and avoid obstacles to earn points and power-ups.</p>
-        <img src="projects/MusicGame/Picture1.gif" alt="Game Screenshot">
     </section>
+    <section id="supporting-roles" class="fade-in">
+        <h2>Supporting Roles</h2>
+        <ul>
+            <li><strong>Intersection Enum:</strong> Detects collisions and determines how objects interact.</li>
+            <li><strong>Control Abstract Class:</strong> Provides a basic blueprint guiding object movements and reactions in the game.</li>
+        </ul>
+    </section>
+    <section id="live-demo" class="fade-in">
+        <h2>Live Demo</h2>
+        <p>I'll now showcase the final version of Music Game Adventure, highlighting the intricate game logic that powers player movement, score accumulation, and level progression.</p>
+    </section>
+    <section id="learning-points" class="fade-in">
+        <h2>Learning Points</h2>
+        <p>Throughout the development process, we gained valuable insights into game logic design and implementation, including strategic collision handling and debugging. These learnings deepened our understanding of software development and honed our problem-solving skills in a gaming context.</p>
+    </section>
+    <section id="adaptability-future-goals" class="fade-in">
+        <h2>Adaptability and Future Goals</h2>
+        <p>Reflecting on our journey, we recognize the importance of adaptability in agile development, where we addressed challenges and iteratively improved the game logic. Moving forward, we aim to further refine the game logic, introducing additional features such as advanced enemy AI, interactive environments, and branching storylines.</p>
+    </section>
+    <section id="conclusion" class="fade-in">
+        <h2>Conclusion</h2>
+        <p>Music Game Adventure embodies our dedication to crafting immersive gameplay experiences through meticulous game logic development. Thank you for the opportunity to share our journey, and I'm eager to answer any questions or discuss further insights into our game development process.</p>
+    </section>
+    <section id="how-to-play" class="fade-in">
+        <h2>How to Play</h2>
+        <p>To play Music Game Adventure, follow these steps:</p>
+        <ol>
+            <li>Visit the GitHub repository: <a href="https://github.com/RFahal01/Music-Game" target="_blank">https://github.com/RFahal01/Music-Game</a></li>
+            <li>Click on the green "Code" button and select "Download ZIP" to download the game files.</li>
+            <li>Extract the downloaded ZIP file to your desired location on your computer.</li>
+            <li>Open your terminal or command prompt and navigate to the extracted folder.</li>
+            <li>Ensure you have Java installed on your computer. If not, download and install it from the official <a href="https://www.oracle.com/java/" target="_blank">Java SE Downloads</a> page.</li>
+            <li>Compile the game by running the following command in your terminal:
+                <pre class="code">javac MusicGame.java</pre>
+            </li>
+            <li>Run the game by executing the following command:
+                <pre class="code">java MusicGame</pre>
+            </li>
+            <li>Use the arrow keys to navigate and the spacebar to jump. Collect musical notes and avoid obstacles to earn points and power-ups.</li>
+        </ol>
+        <img src="Picture1.gif" alt="Game Screenshot">
+    </section>
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
+    <footer>
+        <p>&copy; 2024 Ramey Fahal. All rights reserved.</p>
+    </footer>
+    <script>
+        // Show scroll-to-top button
+        window.onscroll = function() {
+            var scrollButton = document.querySelector('.scroll-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        // Scroll to top function
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Fade-in effect for sections
+        window.addEventListener('scroll', function() {
+            var fadeElements = document.querySelectorAll('.fade-in');
+            var windowHeight = window.innerHeight;
+            fadeElements.forEach(function(el) {
+                var elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
