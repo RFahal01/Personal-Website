@@ -1,61 +1,62 @@
-$primary-color: #333;
+$primary-color: #000000;
 $secondary-color: #ffcd00;
+$background-color: #ffffff;
+$hover-background: #fffcf2;
 $font-family: 'Roboto', sans-serif;
 
 body {
     font-family: $font-family;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: $primary-color;
-    color: $secondary-color;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: $secondary-color;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2, h3 {
+    background-color: $background-color;
     color: $primary-color;
 }
 
 a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: $primary-color;
     color: $secondary-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $secondary-color;
+        text-decoration: underline;
+    }
 }
+
+/* Header Styles */
+header {
+    background-color: $background-color;
+    padding: 20px 0;
+    border-bottom: 2px solid $secondary-color;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .navbar-header .navbar-brand {
+            font-size: 24px;
+            color: $primary-color;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+
+            li {
+                margin-left: 20px;
+
+                a {
+                    color: $primary-color;
+                    font-weight: 500;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Similar SCSS styling for other sections based on the CSS provided */
