@@ -9,22 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Experience Timeline Hover Effect
-    const timelineItems = document.querySelectorAll('#experience .timeline-item');
-    timelineItems.forEach(item => {
-        item.addEventListener('mouseover', function () {
-            let infoBox = document.createElement('div');
-            infoBox.className = 'extra-info';
-            infoBox.innerText = item.getAttribute('data-info');
-            item.appendChild(infoBox);
-            infoBox.style.display = 'block';
-        });
-
-        item.addEventListener('mouseout', function () {
-            const infoBox = item.querySelector('.extra-info');
-            if (infoBox) {
-                infoBox.remove();
-            }
-        });
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Thank you for your message. We will get back to you shortly.');
     });
 });
