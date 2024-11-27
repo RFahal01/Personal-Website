@@ -1,246 +1,415 @@
-<!doctype html>
-<html lang="en">
+<!doctype html> 
+<html class="no-js" lang="en">
 
 <head>
-    <!-- Meta Data -->
+    <!-- meta data -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="p:domain_verify" content="7a67866e0540f12917de94c61b3f38be"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- Title -->
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+    
+    <!-- title of site -->
     <title>Ramey Fahal Portfolio</title>
 
-    <!-- Favicon -->
+    <!-- For favicon png -->
     <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
-
-    <!-- Fonts and Icons -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+   
+    <!--font-awesome.min.css-->
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!--flat icon css-->
+    <link rel="stylesheet" href="assets/css/flaticon.css">
 
-    <!-- JavaScript Files -->
-    <script src="assets/js/script.js" defer></script>
+    <!--animate.css-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--owl.carousel.css-->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="assets/css/bootsnav.css">   
+    
+    <!--style.css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!--responsive.css-->
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
-    <!-- Header Start -->
+
+    <!-- top-area Start -->
     <header class="top-area">
         <div class="header-area">
-            <!-- Navigation -->
-            <nav class="navbar">
+            <!-- Start Navigation -->
+            <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
                 <div class="container">
-                    <!-- Logo -->
+                    <!-- Start Header Navigation -->
                     <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
                         <a class="navbar-brand" href="index.html">Ramey Fahal</a>
-                    </div>
-                    <!-- Menu -->
-                    <div class="menu">
-                        <ul>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#education">Education</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#experience">Experience</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!-- Header End -->
+                    </div><!--/.navbar-header-->
+                    <!-- End Header Navigation -->
 
-    <!-- Welcome Section Start -->
-    <section id="welcome-hero">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="smooth-menu active"><a href="#about">About</a></li>
+                            <li class="smooth-menu"><a href="#education">Education</a></li>
+                            <li class="smooth-menu"><a href="#skills">Skills</a></li>
+                            <li class="smooth-menu"><a href="#experience">Experience</a></li>
+                            <li class="smooth-menu"><a href="#portfolio">Portfolio</a></li>
+                        </ul><!--/.nav -->
+                    </div><!-- /.navbar-collapse -->
+                </div><!--/.container-->
+            </nav><!--/nav-->
+            <!-- End Navigation -->
+        </div><!--/.header-area-->
+
+        <div class="clearfix"></div>
+    </header><!-- /.top-area-->
+    <!-- top-area End -->
+
+    <!--welcome-hero start -->
+    <section id="welcome-hero" class="welcome-hero">
         <div class="container">
-            <div class="welcome-text">
-                <h2>Welcome, I am<br>Ramey Fahal.</h2>
-                <p>IT Supervisor @ The University of Iowa</p>
-                <a href="Ramey_Fahal_Resume.pdf" download>Download My Resume</a>
-            </div>
-        </div>
-    </section>
-    <!-- Welcome Section End -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="header-text">
+                        <h2>Welcome <span>,</span> I am <br> Ramey <br> Fahal <span>.</span></h2>
+                        <p>IT Specialties Supervisor @ The University of Iowa</p>
+                        <a href="Ramey Fahal - Résumé Updated.pdf" download>Downloadable Resume Coming Soon</a>
+                    </div><!--/.header-text-->
+                </div><!--/.col-->
+            </div><!-- /.row-->
+        </div><!-- /.container-->
+    </section><!--/.welcome-hero-->
+    <!--welcome-hero end -->
 
-    <!-- About Section Start -->
-    <section id="about">
+    <!--about start -->
+    <section id="about" class="about">
         <div class="section-heading text-center">
             <h2>About Me</h2>
         </div>
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a dedicated and adaptable IT professional with a strong foundation in operational security, project management, and multilingual communication. Currently pursuing a B.A. in Interdepartmental Studies—Business Studies Track with a Technology and Inquiry emphasis at the University of Iowa, along with minors in Computer Science and Business. I am also working towards an A.A.S. in Cybersecurity and Compliance at Kirkwood Community College, anticipating graduation in Summer 2025.
-                    </p>
-                    <p>
-                        In my role as an IT Supervisor for Enterprise Infrastructure at the University of Iowa, I lead a team focused on managing and enhancing the university's network infrastructure. My responsibilities include strategic project leadership, team development, and ensuring optimal network performance and security.
-                    </p>
-                    <p>
-                        As an aspiring Project Manager with an emphasis on operational security, I am committed to continuous learning and contributing to diverse, international environments. Active in the National Society of Black Engineers (NSBE), my goal is to leverage my skills and experiences to drive impactful projects and innovations in the tech industry.
-                    </p>
-                    <!-- Contact Info -->
-                    <div class="contact-info">
-                        <h3>Connect with me:</h3>
-                        <p><a href="https://www.linkedin.com/in/ramey-fahal" target="_blank">LinkedIn Profile</a></p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="single-about-txt">
+                            <h3>
+                                I am a dedicated IT Specialties Supervisor at the University of Iowa, specializing in IT management, software development, and network infrastructure.
+                            </h3>
+                            <p>
+                                My professional experience includes managing IT infrastructure, implementing RFID technology, and leading projects to enhance operational efficiency. I am passionate about continuous learning and problem-solving, having lived and studied in both Kuwait and Egypt.
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="single-about-add-info">
+                                        <h3>Phone</h3>
+                                        <p>+1 (319) 430-2682</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="single-about-add-info">
+                                        <h3>Email</h3>
+                                        <p><a href="mailto:rameyfahal@outlook.com">rameyfahal@outlook.com</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="single-about-add-info">
+                                        <h3>LinkedIn</h3>
+                                        <p><a href="https://www.linkedin.com/in/ramey-fahal" target="_blank">/in/ramey-fahal</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="about-image">
-                    <img src="assets/images/Headshot.png" alt="Ramey Fahal">
+                    <div class="col-sm-offset-1 col-sm-5">
+                        <div class="single-about-img">
+                            <img src="assets/images/Headshot.png" alt="profile_image">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- About Section End -->
+    </section><!--/.about-->
+    <!--about end -->
 
-    <!-- Education Section Start -->
-    <section id="education">
+    <!--education start -->
+    <section id="education" class="education">
         <div class="section-heading text-center">
             <h2>Education</h2>
         </div>
         <div class="container">
-            <div class="education-timeline">
-                <!-- Timeline Items -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Kirkwood Community College</h3>
-                        <p>A.S. in Liberal Arts<br>Completed December 2022</p>
+            <div class="education-horizontal-timeline">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="single-horizontal-timeline">
+                            <div class="experience-time">
+                                <h2>October 2022 - May 2023</h2>
+                                <h3>Islamic Cultural Center || المركز الثقافي الإسلامي</h3>
+                            </div><!--/.experience-time-->
+                            <div class="timeline-horizontal-border">
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                <span class="single-timeline-horizontal"></span>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-content">
+                                    <h4 class="title">
+                                        Certificate in Arabic Language and Islamic Sciences
+                                    </h4>
+                                    <h5>Kuwait</h5>
+                                </div><!--/.timeline-content-->
+                            </div><!--/.timeline-->
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Islamic Cultural Center</h3>
-                        <p>Certificate in Arabic Language and Islamic Sciences<br>Completed December 2023</p>
+                    <div class="col-sm-4">
+                        <div class="single-horizontal-timeline">
+                            <div class="experience-time">
+                                <h2>Completed December 2022</h2>
+                                <h3>Associate of Science in Liberal Arts</h3>
+                            </div><!--/.experience-time-->
+                            <div class="timeline-horizontal-border">
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                <span class="single-timeline-horizontal"></span>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-content">
+                                    <h4 class="title">
+                                        Kirkwood Community College
+                                    </h4>
+                                    <h5>Cedar Rapids, IA</h5>
+                                </div><!--/.timeline-content-->
+                            </div><!--/.timeline-->
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Kirkwood Community College</h3>
-                        <p>A.A.S. in Cybersecurity and Compliance<br>Anticipated Summer 2025</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>University of Iowa</h3>
-                        <p>B.A. in Interdepartmental Studies<br>Anticipated Summer 2025</p>
+                    <div class="col-sm-4">
+                        <div class="single-horizontal-timeline">
+                            <div class="experience-time">
+                                <h2>Anticipated Graduation Summer 2025</h2>
+                                <h3>Bachelor of Arts in Interdepartmental Studies</h3>
+                            </div><!--/.experience-time-->
+                            <div class="timeline-horizontal-border">
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                <span class="single-timeline-horizontal"></span>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-content">
+                                    <h4 class="title">
+                                        University of Iowa  
+                                    </h4>
+                                    <h5>Iowa City, IA</h5>
+                                </div><!--/.timeline-content-->
+                            </div><!--/.timeline-->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Education Section End -->
+    </section><!--/.education-->
+    <!--education end -->
 
-    <!-- Skills Section Start -->
-    <section id="skills">
-        <div class="section-heading text-center">
-            <h2>Skills</h2>
-        </div>
-        <div class="container">
-            <div class="skills-grid">
-                <!-- Skill Items -->
-                <div class="skill-item">
-                    <i class="fa fa-code"></i>
-                    <h4>Programming Languages</h4>
-                    <p>Java, Python, HTML, CSS, JavaScript</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-desktop"></i>
-                    <h4>Applications</h4>
-                    <p>IntelliJ IDEA, Visual Studio Code, BlueJ</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-network-wired"></i>
-                    <h4>Technical Expertise</h4>
-                    <p>Network Infrastructure Management, Cybersecurity Compliance, RFID Technology Implementation</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-users"></i>
-                    <h4>Soft Skills</h4>
-                    <p>Leadership, Team Management, Project Management, Problem-Solving</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fa fa-language"></i>
-                    <h4>Languages</h4>
-                    <p>English (Native), Arabic (Fluent)</p>
-                </div>
+    <!--skills start -->
+    <section id="skills" class="skills">
+        <div class="skill-content">
+            <div class="section-heading text-center">
+                <h2>Skills</h2>
+            </div>
+            <div class="container">
+                <ul>
+                    <li>Programming Languages: Java, Python, HTML, CSS, JavaScript</li>
+                    <li>Applications: IntelliJ IDEA, Visual Studio Code, BlueJ</li>
+                    <li>Technical Expertise: Network Infrastructure Management, RFID Technology, Data Analysis</li>
+                    <li>Soft Skills: Leadership, Project Management, Team Collaboration</li>
+                    <li>Languages: Bilingual in English and Arabic</li>
+                </ul>
             </div>
         </div>
-    </section>
-    <!-- Skills Section End -->
+    </section><!--/.skills-->
+    <!--skills end -->
 
-    <!-- Experience Section Start -->
-    <section id="experience">
+    <!--experience start -->
+    <section id="experience" class="experience">
         <div class="section-heading text-center">
             <h2>Experience</h2>
         </div>
         <div class="container">
-            <div class="experience-timeline">
-                <!-- Timeline Items (Oldest to Newest) -->
-                <div class="timeline-item" data-info="Managed customer service operations at Walmart, honing leadership and problem-solving skills. Oversaw staffing and trained associates in safety and efficiency.">
-                    <div class="timeline-content">
-                        <h3>Customer Service Manager</h3>
-                        <p>Walmart Inc.<br>May 2019 – May 2021</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-info="Assisted in maintaining and enhancing the university's network infrastructure. Gained foundational experience in network operations and support.">
-                    <div class="timeline-content">
-                        <h3>IT Specialties Assistant</h3>
-                        <p>University of Iowa<br>Jan 2021 – Jun 2022</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-info="Oversaw the student physical network team and managed the physical network infrastructure. Automated processes and enhanced network operations efficiency.">
-                    <div class="timeline-content">
-                        <h3>IT Specialties Lead</h3>
-                        <p>University of Iowa<br>Jun 2022 – Jun 2023</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-info="Leading a team to manage and enhance the university's network infrastructure. Focused on strategic project leadership, team development, and ensuring optimal network performance and security.">
-                    <div class="timeline-content">
-                        <h3>IT Supervisor</h3>
-                        <p>University of Iowa<br>Jun 2023 – Present</p>
-                    </div>
-                </div>
-            </div>
+            <div class="experience-content">
+                <div class="main-timeline">
+                    <ul>
+                        <li>
+                            <div class="single-timeline-box fix">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="experience-time text-right">
+                                            <h2>11/2024 - Present</h2>
+                                            <h3>IT Specialties Supervisor</h3>
+                                        </div><!--/.experience-time-->
+                                    </div><!--/.col-->
+                                    <div class="col-md-offset-1 col-md-5">
+                                        <div class="timeline">
+                                            <div class="timeline-content">
+                                                <h4 class="title">
+                                                    <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                                    University of Iowa
+                                                </h4>
+                                                <h5>Iowa City, IA</h5>
+                                                <p class="description">
+                                                    Led RFID technology integration, improved scalability, and directed network security policies.
+                                                </p>
+                                            </div><!--/.timeline-content-->
+                                        </div><!--/.timeline-->
+                                    </div><!--/.col-->
+                                </div>
+                            </div><!--/.single-timeline-box-->
+                        </li>
+                        <li>
+                            <div class="single-timeline-box fix">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="experience-time text-right">
+                                            <h2>08/2024 - 11/2024</h2>
+                                            <h3>IT Specialties Lead</h3>
+                                        </div><!--/.experience-time-->
+                                    </div><!--/.col-->
+                                    <div class="col-md-offset-1 col-md-5">
+                                        <div class="timeline">
+                                            <div class="timeline-content">
+                                                <h4 class="title">
+                                                    <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                                    University of Iowa
+                                                </h4>
+                                                <h5>Iowa City, IA</h5>
+                                                <p class="description">
+                                                    Automated IT Connect updates and led structured cabling projects to enhance efficiency.
+                                                </p>
+                                            </div><!--/.timeline-content-->
+                                        </div><!--/.timeline-->
+                                    </div><!--/.col-->
+                                </div>
+                            </div><!--/.single-timeline-box-->
+                        </li>
+                        <li>
+                            <div class="single-timeline-box fix">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="experience-time text-right">
+                                            <h2>05/2019 - 05/2021</h2>
+                                            <h3>Customer Service Manager</h3>
+                                        </div><!--/.experience-time-->
+                                    </div><!--/.col-->
+                                    <div class="col-md-offset-1 col-md-5">
+                                        <div class="timeline">
+                                            <div class="timeline-content">
+                                                <h4 class="title">
+                                                    <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                                    Walmart
+                                                </h4>
+                                                <h5>Cedar Rapids, IA</h5>
+                                                <p class="description">
+                                                    Managed a team of 30 associates, resolving customer complaints efficiently and ensuring a smooth operation.
+                                                </p>
+                                            </div><!--/.timeline-content-->
+                                        </div><!--/.timeline-->
+                                    </div><!--/.col-->
+                                </div>
+                            </div><!--/.single-timeline-box-->
+                        </li>
+                    </ul>
+                </div><!--.main-timeline-->
+            </div><!--.experience-content-->
         </div>
-    </section>
-    <!-- Experience Section End -->
+    </section><!--/.experience-->
+    <!--experience end -->
 
-    <!-- Portfolio Section Start -->
-    <section id="portfolio">
-        <div class="section-heading text-center">
-            <h2>Portfolio</h2>
-        </div>
+    <!--portfolio start -->
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-details">
+            <div class="section-heading text-center">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="container">
+                <div class="portfolio-content">
+                    <div class="isotope">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="item">
+                                    <img src="assets\images\IT Rooms Directory.png" alt="portfolio image">
+                                    <div class="isotope-overlay">
+                                        <a href="projects\Project1\projectindex.html">
+                                            U of Iowa IT Rooms Directory
+                                        </a>
+                                    </div><!-- /.isotope-overlay -->
+                                </div><!-- /.item -->
+                            </div><!-- /.col -->
+                            <div class="col-sm-4">
+                                <div class="item">
+                                    <img src="assets\images\Picture2.gif" alt="portfolio image">
+                                    <div class="isotope-overlay">
+                                        <a href="projects\MusicGame\index.html">
+                                            Music Game
+                                        </a>
+                                    </div><!-- /.isotope-overlay -->
+                                </div><!-- /.item -->
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="item">
+                                    <img src="assets\images\IT Rooms Directory.png" alt="portfolio image">
+                                    <div class="isotope-overlay">
+                                        <a href="projects\Project1\projectindex.html">
+                                            U of Iowa IT Rooms Directory
+                                        </a>
+                                    </div><!-- /.isotope-overlay -->
+                                </div><!-- /.item -->
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!--/.isotope-->
+                </div><!--/.portfolio-content-->
+            </div><!--/.container-->
+        </div><!--/.portfolio-details-->
+    </section><!--/.portfolio-->
+    <!--portfolio end -->
+
+    <!--footer-copyright start-->
+    <footer id="footer-copyright" class="footer-copyright">
         <div class="container">
-            <div class="portfolio-grid">
-                <!-- Portfolio Items -->
-                <div class="portfolio-item">
-                    <img src="assets/images/Project1.png" alt="Project 1">
-                    <div class="portfolio-overlay">
-                        <a href="projects/Project1/projectindex.html">Project 1: U of Iowa IT Rooms Directory</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="assets/images/MusicGame.png" alt="Music Game">
-                    <div class="portfolio-overlay">
-                        <a href="projects/MusicGame/index.html">Project 2: Music Game</a>
-                    </div>
-                </div>
-                <!-- Add other old projects here -->
+        </div><!--/.container-->
+        <div id="scroll-Top">
+            <div class="return-to-top">
+                <i class="fa fa-angle-up " id="scroll-top"></i>
             </div>
-        </div>
-    </section>
-    <!-- Portfolio Section End -->
+        </div><!--/.scroll-Top-->
+    </footer><!--/.footer-copyright-->
 
-    <!-- Footer Start -->
-    <footer>
-        <p>&copy; 2023 Ramey Fahal</p>
-    </footer>
-    <!-- Footer End -->
-
-    <!-- JavaScript Files -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <!--modernizr.min.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <!--bootstrap.min.js-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- bootsnav js -->
+    <script src="assets/js/bootsnav.js"></script>
+    <!-- jquery.sticky.js -->
+    <script src="assets/js/jquery.sticky.js"></script>
+    <!-- for progress bar start-->
+    <!-- progressbar js -->
+    <script src="assets/js/progressbar.js"></script>
+    <!-- appear js -->
+    <script src="assets/js/jquery.appear.js"></script>
+    <!-- for progress bar end -->
+    <!--owl.carousel.js-->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!--Custom JS-->
+    <script src="assets/js/custom.js"></script>
 </body>
-
 </html>
