@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Music Game Adventure</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     /* Global Styles */
     * {
@@ -11,26 +12,21 @@
       padding: 0;
       box-sizing: border-box;
     }
-
-    /* Body (Dark Navy) */
     body {
       font-family: Arial, sans-serif;
       background: #0C1B33; /* Dark navy background */
-      color: #ffffff;      /* White text by default */
+      color: #ffffff;
       line-height: 1.6;
     }
-
-    /* Container */
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
     }
-
     /* Header */
     .header {
-      background: #FFC107; /* Gold background for header */
-      color: #0C1B33;       /* Navy text for contrast */
+      background: #FFC107; /* Gold header */
+      color: #0C1B33;
       padding: 2rem 0;
       text-align: left;
     }
@@ -38,10 +34,9 @@
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
-
     /* Navbar */
     .navbar {
-      background: #13284f; /* Another navy shade for nav bar */
+      background: #13284f;
       padding: 1rem 0;
     }
     .navbar ul {
@@ -61,23 +56,24 @@
     .navbar a:hover {
       color: #FFC107;
     }
-
-    /* Section base */
+    /* Section Base */
     .section {
       padding: 3rem 0;
       transition: background 0.3s;
+      text-align: left;
     }
     .section h2 {
-      text-align: left;
       margin-bottom: 1rem;
       font-size: 2rem;
       color: #FFC107;
     }
     .section p {
       margin-bottom: 1rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    /* Fade-in for .visible sections */
+    /* Fade-in Animation */
     .section.visible {
       opacity: 1;
       transform: translateY(0);
@@ -86,16 +82,33 @@
       opacity: 0;
       transform: translateY(20px);
     }
-
-    /* left images in sections */
+    /* Images: now enlarged and lefted */
     .section img {
-      max-width: 150%;
+      width: 80%;
+      max-width: 100%;
       height: auto;
       border-radius: 6px;
       margin: 1rem auto;
       display: block;
+      cursor: pointer; /* For lightbox effect */
     }
-
+    /* Bugs & Game Elements Containers */
+    .bugs-images-container,
+    .game-elements-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .bug-image, .game-element {
+      text-align: center;
+    }
+    .game-element img {
+      max-width: 150px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
     /* Footer */
     .footer {
       background: #13284f;
@@ -103,8 +116,7 @@
       text-align: center;
       padding: 1rem 0;
     }
-
-    /* SCROLL-TO-TOP BUTTON */
+    /* Scroll-to-Top Button */
     #scrollTopBtn {
       position: fixed;
       bottom: 20px;
@@ -118,19 +130,45 @@
       font-size: 24px;
       cursor: pointer;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      display: none; /* hidden by default */
+      display: none;
       transition: background 0.3s, transform 0.3s;
     }
     #scrollTopBtn:hover {
       background: #e0a106;
       transform: scale(1.1);
     }
-
+    /* Floating Buttons Container */
+    #floatButtons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1001;
+    }
+    .btn-circle {
+      background: #FFC107;
+      color: #0C1B33;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn-circle:hover {
+      background: #e0a106;
+      transform: scale(1.1);
+    }
     /* Responsive Styles */
     @media (max-width: 768px) {
       .navbar ul {
         flex-direction: column;
-        align-items: left;
+        align-items: flex-start;
       }
     }
   </style>
@@ -147,7 +185,6 @@
   <nav class="navbar">
     <div class="container">
       <ul>
-        <!-- Link back to your main site -->
         <li><a href="../../index.html">Return to RameyFahal.com</a></li>
       </ul>
     </div>
@@ -158,224 +195,149 @@
     <div class="container">
 
       <!-- Introduction Section -->
-      <section id="introduction" class="section fade-in">
+      <section id="introduction" class="section">
         <h2>Introduction</h2>
         <p>
-          Welcome to Music Game Adventure, an exciting project where players experience dynamic gameplay filled with challenges and rewards. This game is developed in Java and features intricate game logic that drives player interactions, score tracking, and level progression.
+          • Welcome to Music Game Adventure, an exciting project where players experience dynamic gameplay filled with challenges and rewards. This game is developed in Java and features intricate game logic that drives player interactions, score tracking, and level progression.
         </p>
       </section>
 
       <!-- Project Description Section -->
-      <section id="project-description" class="section fade-in">
+      <section id="project-description" class="section">
         <h2>Project Description</h2>
         <p>
-          Music Game Adventure is a Java-based game that showcases our interests in problem-solving and game development. Our roles involved developing robust game mechanics, ensuring smooth gameplay transitions, and maintaining dynamic player experiences.
+          • Music Game Adventure is a Java-based game that showcases our passion for problem-solving and game development. Our team developed robust game mechanics to ensure smooth gameplay transitions and maintain a dynamic player experience.
         </p>
       </section>
 
       <!-- Game Logic Development -->
-      <section id="game-logic-development" class="section fade-in">
+      <section id="game-logic-development" class="section">
         <h2>Game Logic Development</h2>
         <p>
-          Developing the game logic involved an iterative process, where we continuously refined parameters and mechanics to achieve balanced gameplay. Our focus was on creating seamless transitions between game states and maintaining player engagement by making the player’s actions directly impact difficulty levels, sound, power-up availability, and scoring mechanics.
+          • The development process involved continuous refinement of parameters and mechanics to achieve balanced gameplay. We focused on creating seamless transitions between game states and ensuring that every player action directly impacts difficulty, sound, power-up availability, and scoring.
         </p>
       </section>
 
-      <!-- Core Components -->
-      <section id="core-components" class="section fade-in">
+      <!-- Core Components Section -->
+      <section id="core-components" class="section">
         <h2>Core Components</h2>
-        <ul>
-          <li><strong>MusicGame:</strong> Controls everything, manages the game and player actions, handles game flow and progression, and adapts with the score.</li>
-          <li><strong>Background:</strong> Sets the scene, handles collisions, adjusts visuals and gameplay elements, and resets for new challenges.</li>
-          <li><strong>Player:</strong> The player's character, moves, scores points, and reacts to collisions, keeping track of progress and special bonuses.</li>
-          <li><strong>Paddle:</strong> Helps control the game by moving and adjusting its size, changing speed and size as you progress.</li>
-          <li><strong>PowerUp:</strong> Provides special boosts during the game, appears randomly, and alters gameplay momentarily.</li>
-          <li><strong>Sound:</strong> Adds music and effects to enhance the game atmosphere, reacts to game events to keep the player engaged.</li>
-          <li><strong>MainMenu:</strong> Starts your adventure, offering options to begin, pause, and restart the game.</li>
-        </ul>
+        <p>
+          <strong>• MusicGame:</strong> Controls overall game flow, manages player actions, and tracks score.
+          <br><br>
+          <strong>• Background:</strong> Sets the visual scene, manages collisions, and handles game transitions.
+          <br><br>
+          <strong>• Player:</strong> Represents the character, handling movement, collision, and scoring.
+          <br><br>
+          <strong>• Paddle:</strong> Adjusts gameplay dynamics by moving and resizing during play.
+          <br><br>
+          <strong>• PowerUp:</strong> Offers temporary boosts and alters gameplay for a short time.
+          <br><br>
+          <strong>• Sound:</strong> Provides music and sound effects that enhance the game atmosphere.
+          <br><br>
+          <strong>• MainMenu:</strong> Provides options to start, pause, and restart the game.
+        </p>
         <img src="Picture4.png" alt="Game Logic Diagram">
       </section>
 
-          <!-- Bugs & Gameplay Issues -->
-    <section id="bugs-gameplay-issues" class="section fade-in">
-      <h2>Bugs and Gameplay Issues</h2>
-      <p>During development, several bugs and gameplay issues were encountered:</p>
-      <ul>
-        <li>Power-up spawns</li>
-        <li>Game progression</li>
-        <li>Restarting increases game speed</li>
-        <li>Player gravity and jump height</li>
-        <li>Platform quantity</li>
-      </ul>
-      <div class="bugs-images-container">
-        <div class="bug-image">
-          <img src="Picture2.gif" alt="Bug and Gameplay Issue 1">
-          <p>Bug and Gameplay Issue 1</p>
-        </div>
-        <div class="bug-image">
-          <img src="Picture3.gif" alt="Bug and Gameplay Issue 2">
-          <p>Bug and Gameplay Issue 2</p>
-        </div>
-      </div>
-    </section>
-    
-    <style>
-      .bugs-images-container {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 1rem;
-      }
-      .bug-image {
-        text-align: center;
-      }
-      .bug-image img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
-    </style>
-
-      <!-- Game Main Menu -->
-      <section id="game-main-menu" class="section fade-in">
-        <h2>Game Main Menu</h2>
+      <!-- Bugs & Gameplay Issues Section -->
+      <section id="bugs-gameplay-issues" class="section">
+        <h2>Bugs and Gameplay Issues</h2>
         <p>
-          The main menu of the game provides options to start, pause, and restart the game:
+          • During development, issues such as inconsistent power-up spawns, unexpected game progression, increased speed on restart, player gravity variations, and platform quantity adjustments were encountered.
         </p>
-        <img src="Picture5.png" alt="Game Main Menu Description Slide">
-      </section>
-
-                  <!-- Game Elements -->
-        <section id="game-elements" class="section fade-in">
-          <h2>Game Elements</h2>
-          <div class="game-elements-container">
-            <div class="game-element">
-              <p>Player</p>
-              <img src="Picture6.png" alt="Player">
-            </div>
-            <div class="game-element">
-              <p>Paddle</p>
-              <img src="Picture7.png" alt="Paddle">
-            </div>
-            <div class="game-element">
-              <p>Power Up</p>
-              <img src="Picture8.png" alt="Power Up">
-            </div>
+        <div class="bugs-images-container">
+          <div class="bug-image">
+            <img src="Picture2.gif" alt="Bug Issue 1">
+            <p>Issue 1</p>
           </div>
-        </section>
-        
-        <style>
-          .game-elements-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            text-align: center;
-          }
-          .game-element {
-            text-align: center;
-          }
-          .game-element img {
-            max-width: 100px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-          }
-        </style>
+          <div class="bug-image">
+            <img src="Picture3.gif" alt="Bug Issue 2">
+            <p>Issue 2</p>
+          </div>
+        </div>
+      </section>
     
-    <style>
-      .game-elements-container {
-        display: flex;
-        justify-content: left;
-        gap: 2rem;
-      }
-      .game-element {
-        text-align: left;
-      }
-      .game-element img {
-        max-width: 100px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
-    </style>
-
-      <!-- Supporting Roles -->
-      <section id="supporting-roles" class="section fade-in">
-        <h2>Supporting Roles</h2>
-        <ul>
-          <strong>Intersection Enum:</strong> Detects collisions and determines how objects interact.
-          <br>
-          <strong>Control Abstract Class:</strong> Provides a basic blueprint guiding object movements and reactions in the game.
-        </ul>
+      <!-- Game Main Menu Section -->
+      <section id="game-main-menu" class="section">
+        <h2>Game Main Menu</h2>
+        <p>• The main menu offers options to start, pause, and restart the game.</p>
+        <img src="Picture5.png" alt="Game Main Menu">
       </section>
 
-      <!-- Live Demo -->
-      <section id="live-demo" class="section fade-in">
+      <!-- Game Elements Section -->
+      <section id="game-elements" class="section">
+        <h2>Game Elements</h2>
+        <p>• The game features several key elements including the Player, Paddle, and Power Up.</p>
+        <div class="game-elements-container">
+          <div class="game-element">
+            <p>Player</p>
+            <img src="Picture6.png" alt="Player">
+          </div>
+          <div class="game-element">
+            <p>Paddle</p>
+            <img src="Picture7.png" alt="Paddle">
+          </div>
+          <div class="game-element">
+            <p>Power Up</p>
+            <img src="Picture8.png" alt="Power Up">
+          </div>
+        </div>
+      </section>
+        
+      <!-- Supporting Roles Section -->
+      <section id="supporting-roles" class="section">
+        <h2>Supporting Roles</h2>
+        <p>
+          <strong>• Intersection Enum:</strong> Detects collisions and governs object interactions.
+          <br><br>
+          <strong>• Control Abstract Class:</strong> Provides a blueprint for object movements and responses.
+        </p>
+      </section>
+
+      <!-- Live Demo Section -->
+      <section id="live-demo" class="section">
         <h2>Live Demo</h2>
         <p>
-          I'll now showcase the final version of Music Game Adventure, highlighting the intricate game logic that powers player movement, score accumulation, and level progression.
+          • Experience Music Game Adventure live as we showcase the intricate game logic driving player movement, scoring, and level progression.
         </p>
       </section>
 
-      <!-- Learning Points -->
-      <section id="learning-points" class="section fade-in">
+      <!-- Learning Points Section -->
+      <section id="learning-points" class="section">
         <h2>Learning Points</h2>
         <p>
-          Throughout the development process, we gained valuable insights into game logic design and implementation, including strategic collision handling and debugging. These learnings deepened our understanding of software development and honed our problem-solving skills in a gaming context.
+          • Throughout development, we gained valuable insights into effective game logic design, collision handling, and debugging—enhancing our overall software development skills.
         </p>
       </section>
 
-      <!-- Adaptability & Future Goals -->
-      <section id="adaptability-future-goals" class="section fade-in">
+      <!-- Adaptability & Future Goals Section -->
+      <section id="adaptability-future-goals" class="section">
         <h2>Adaptability and Future Goals</h2>
         <p>
-          Reflecting on our journey, we recognize the importance of adaptability in agile development, where we addressed challenges and iteratively improved the game logic. Moving forward, we aim to further refine the game logic, introducing additional features such as advanced enemy AI, interactive environments, and branching storylines.
+          •  Our agile process allowed us to overcome challenges and iteratively improve gameplay. Future enhancements include advanced enemy AI, interactive environments, and branching storylines.
         </p>
       </section>
 
-      <!-- Conclusion -->
-      <section id="conclusion" class="section fade-in">
+      <!-- Conclusion Section -->
+      <section id="conclusion" class="section">
         <h2>Conclusion</h2>
         <p>
-          Music Game Adventure embodies our dedication to crafting immersive gameplay experiences through meticulous game logic development. Thank you for the opportunity to share our journey, and I'm eager to answer any questions or discuss further insights into our game development process.
+          •  Music Game Adventure reflects our dedication to crafting immersive gameplay experiences through refined game logic and design. Thank you for exploring our project.
         </p>
       </section>
 
-      <!-- How to Play -->
-      <section id="how-to-play" class="section fade-in">
+      <!-- How to Play Section -->
+      <section id="how-to-play" class="section">
         <h2>How to Play</h2>
-        <p>To play Music Game Adventure, follow these steps:</p>
-        <ol>
-          <li>
-            Visit the GitHub repository:
-            <a href="https://github.com/RFahal01/Music-Game" target="_blank">
-              https://github.com/RFahal01/Music-Game
-            </a>
-          </li>
-          <li>Click on the green "Code" button and select "Download ZIP" to download the game files.</li>
-          <li>Extract the downloaded ZIP file to your desired location on your computer.</li>
-          <li>Open your terminal or command prompt and navigate to the extracted folder.</li>
-          <li>
-            Ensure you have Java installed on your computer. If not, download and install it from the official
-            <a href="https://www.oracle.com/java/" target="_blank">Java SE Downloads</a> page.
-          </li>
-          <li>
-            Compile the game by running the following command in your terminal:
-            <pre style="background: #13284f; color: #fff; padding: 1rem; border-radius: 5px;">
-javac MusicGame.java
-            </pre>
-          </li>
-          <li>
-            Run the game by executing the following command:
-            <pre style="background: #13284f; color: #fff; padding: 1rem; border-radius: 5px;">
-java MusicGame
-            </pre>
-          </li>
-          <li>
-            Use the arrow keys to navigate and the spacebar to jump. Collect musical notes and avoid obstacles to earn points and power-ups.
-          </li>
-        </ol>
+        <p><strong>Follow these steps to run and play Music Game Adventure:</strong></p>
+        <p>
+          • Visit the GitHub repository at <a href="https://github.com/RFahal01/Music-Game" target="_blank">https://github.com/RFahal01/Music-Game</a> and click the green "Code" button to download the ZIP file.<br><br>
+          • Extract the ZIP file, open your terminal, and navigate to the folder.<br><br>
+          • Ensure Java is installed (download from <a href="https://www.oracle.com/java/" target="_blank">Java SE Downloads</a> if needed).<br><br>
+          • Compile the game with: <code>javac MusicGame.java</code><br><br>
+          • Run the game with: <code>java MusicGame</code><br><br>
+          • Use the arrow keys to navigate and the spacebar to jump. Collect musical notes and avoid obstacles to earn points and power-ups.
+        </p>
         <img src="Picture1.gif" alt="Game Screenshot">
       </section>
 
@@ -388,12 +350,21 @@ java MusicGame
       <p>&copy; 2024 Ramey Fahal. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- SCROLL-TO-TOP BUTTON -->
-  <button id="scrollTopBtn">↑</button>
+  
+  <!-- Floating Buttons: Return Home & Scroll to Top -->
+  <div id="floatButtons">
+    <!-- Return Home button -->
+    <div class="btn-circle" id="returnHomeBtn" title="Return to RameyFahal.com">
+      Home
+    </div>
+    <!-- Scroll to Top button -->
+    <div class="btn-circle" id="scrollTopBtn" title="Scroll to Top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+  </div>
 
   <script>
-    // Fade-in effect for each .section on scroll
+    // Fade-in effect for sections on scroll
     window.addEventListener('scroll', function() {
       const sections = document.querySelectorAll('.section');
       const windowHeight = window.innerHeight;
@@ -404,12 +375,12 @@ java MusicGame
         }
       });
     });
-
+    
     // Scroll-to-Top Button logic
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 200) {
-        scrollTopBtn.style.display = 'block';
+        scrollTopBtn.style.display = 'flex';
       } else {
         scrollTopBtn.style.display = 'none';
       }
@@ -417,6 +388,14 @@ java MusicGame
     scrollTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+    
+    // Return Home Button logic
+    const returnHomeBtn = document.getElementById('returnHomeBtn');
+    returnHomeBtn.addEventListener('click', () => {
+      window.location.href = "../../index.html";
+    });
   </script>
+  <!-- Include our new enhancements.js file -->
+  <script src="enhancements.js"></script>
 </body>
 </html>

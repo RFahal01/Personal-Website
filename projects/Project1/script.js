@@ -275,46 +275,47 @@ document.addEventListener('DOMContentLoaded', function () {
         { "Building Number": "WL", "Location": "WESTLAWN", "Room Number": "Omitted Information", "Directions": "Omitted Information for Security.", "Abbreviation": "WL", "Image": "path/to/image270.jpg" },
         { "Building Number": "R", "Location": "RIENOW HALL", "Room Number": "Omitted Information", "Directions": "Omitted Information for Security.", "Abbreviation": "R", "Image": "path/to/image271.jpg" },
     ];
-
+    
     function displayRooms(rooms) {
         roomsList.innerHTML = '';
         rooms.forEach((room, index) => {
-            const roomDiv = document.createElement('div');
-            roomDiv.classList.add('room-item');
-            roomDiv.innerHTML = `
-                <h3>${room['Building Number']} - ${room.Abbreviation} - ${room.Location}</h3>
-                <p>Room Number: ${room['Room Number']}</p>
-                <button onclick="showDirections(${index})">Show Directions</button>
-                <div id="directions-${index}" class="directions" style="display: none;">
-                    <p>${room.Directions}</p>
-                    <img src="${room.Image}" alt="Room Image">
-                </div>
-            `;
-            roomsList.appendChild(roomDiv);
+          const roomDiv = document.createElement('div');
+          roomDiv.classList.add('room-item');
+          roomDiv.innerHTML = `
+            <h3>${room['Building Number']} - ${room.Abbreviation} - ${room.Location}</h3>
+            <p>Room Number: ${room['Room Number']}</p>
+            <button onclick="showDirections(${index})">Show Directions</button>
+            <div id="directions-${index}" class="directions" style="display: none;">
+              <p>${room.Directions}</p>
+              <img src="${room.Image}" alt="Room Image">
+            </div>
+          `;
+          roomsList.appendChild(roomDiv);
         });
-    }
-
-    displayRooms(roomsData);
-
-    searchBar.addEventListener('keyup', function () {
+      }
+    
+      displayRooms(roomsData);
+    
+      searchBar.addEventListener('keyup', function () {
         const searchTerm = searchBar.value.toLowerCase();
         const filteredRooms = roomsData.filter(room => {
-            return (
-                room.Location.toLowerCase().includes(searchTerm) ||
-                room['Room Number'].toLowerCase().includes(searchTerm) ||
-                room['Building Number'].toLowerCase().includes(searchTerm) ||
-                room.Abbreviation.toLowerCase().includes(searchTerm)
-            );
+          return (
+            room.Location.toLowerCase().includes(searchTerm) ||
+            room['Room Number'].toLowerCase().includes(searchTerm) ||
+            room['Building Number'].toLowerCase().includes(searchTerm) ||
+            room.Abbreviation.toLowerCase().includes(searchTerm)
+          );
         });
         displayRooms(filteredRooms);
+      });
     });
-});
-
-function showDirections(index) {
-    const directionsDiv = document.getElementById(`directions-${index}`);
-    if (directionsDiv.style.display === 'none') {
+    
+    function showDirections(index) {
+      const directionsDiv = document.getElementById(`directions-${index}`);
+      if (directionsDiv.style.display === 'none') {
         directionsDiv.style.display = 'block';
-    } else {
+      } else {
         directionsDiv.style.display = 'none';
     }
 }
+    
