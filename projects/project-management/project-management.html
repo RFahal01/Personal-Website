@@ -2,16 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Project Management Portfolio - Ramey Fahal</title>
+  
+  <!-- Font Awesome (for icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-ac8K+QWbXZwQ12Sd6+fGQQlHDIF8pZx6f7dQ6LDfdXJQow9eTgXXGmdvt9Z5kVMdXbNlQOawh7bq+kk5KpUySw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="project-management.css">
+  
+  <style>
+    /* Modal Overlay & Box */
+    #authModalOverlay {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100vw; 
+      height: 100vh; 
+      background: rgba(0, 0, 0, 0.7);
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      z-index: 9999;
+    }
+    #authModal {
+      background: #fff;
+      color: #333;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    #authModal h2 {
+      margin-bottom: 1rem;
+    }
+    #authModal button {
+      margin: 0 0.5rem;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #ffc107;
+      color: #0C1B33;
+      font-weight: bold;
+    }
+    #authModal button:hover {
+      background: #e0a106;
+    }
+
+    /* Return Home & Scroll-to-Top Buttons */
+    #floatButtons {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    #floatButtons .btn-circle {
+      width: 50px; 
+      height: 50px;
+      border-radius: 50%;
+      background: #ffc107;
+      color: #0C1B33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+    #floatButtons .btn-circle:hover {
+      background: #e0a106;
+      transform: scale(1.1);
+    }
+    #floatButtons .btn-circle a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    /* Hidden by default, displayed via JS */
+    #scrollTopBtn {
+      display: none;
+    }
+
+    /* Hover effects for headings */
+    #projects:hover h2,
+    #skills:hover h2,
+    #testimonials:hover h2 {
+      background: rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Authorization Modal (initially visible) -->
+  <div id="authModalOverlay">
+    <div id="authModal">
+      <h2>Authorized Viewers Only</h2>
+      <p>This page is restricted to authorized viewers. Do you confirm you are authorized?</p>
+      <button id="authYesBtn">Yes</button>
+      <button id="authNoBtn">No</button>
+    </div>
+  </div>
+
   <!-- Header Section -->
   <header class="header">
     <div class="container">
       <h1>Project Management Portfolio</h1>
-      <p>Showcasing strategic projects, leadership, and operational excellence</p>
+      <p>Showcasing Advanced Skills, Innovation, and Leadership</p>
     </div>
   </header>
   
@@ -20,9 +128,9 @@
     <div class="container">
       <ul>
         <li><a href="#overview">Overview</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills & Tools</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#projects">Key Projects & Achievements</a></li>
+        <li><a href="#skills">Technical & Managerial Skills</a></li>
+        <li><a href="#testimonials">Testimonials & Recommendations</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -32,7 +140,13 @@
   <section id="overview" class="section overview">
     <div class="container">
       <h2>Overview</h2>
-      <p>I am an IT leader with extensive experience managing large-scale infrastructure projects and implementing process improvements that drive operational excellence. This portfolio highlights my work in project planning, cross-functional team leadership, and strategic execution.</p>
+      <p>
+        During my tenure at ITS, I have consistently driven process improvements, led cross-functional teams, and implemented innovative solutions that enhanced our IT infrastructure’s reliability, efficiency, and overall performance. My work spans a wide array of projects—from technical infrastructure verifications to comprehensive training and onboarding programs—each meticulously documented and refined to exceed industry standards.
+      </p>
+      <br>
+      <p>
+        This portfolio is a testament to my commitment to excellence, showcasing how I blend strategic vision with advanced technical expertise to solve challenging problems and drive innovation. I push the boundaries to create measurable, high-impact results.
+      </p>
     </div>
   </section>
   
@@ -41,41 +155,153 @@
     <div class="container">
       <h2>Key Projects & Achievements</h2>
       <div class="project-list">
-        <!-- Example Project -->
+        
+        <!-- Fiber Verification Project -->
         <article class="project-item">
-          <h3>Fiber Verification Project</h3>
-          <p><strong>Duration:</strong> May 2024 – Present</p>
-          <p><strong>Objective:</strong> Validate and document campus fiber connectivity to enhance network reliability.</p>
+          <h3>Fiber Verification Project (FVP)</h3>
+          <p><strong>Objective:</strong> Validate and document campus fiber connectivity using advanced, standardized processes to boost network reliability.</p>
           <p><strong>Role & Responsibilities:</strong></p>
           <ul>
-            <li>Directed the planning and scheduling of fiber audits.</li>
-            <li>Coordinated cross-functional teams to streamline verification processes.</li>
-            <li>Implemented process improvements reducing downtime by 30%.</li>
+            <li>Developed comprehensive guidelines for on-site verification and discrepancy recording.</li>
+            <li>Coordinated cross-functional teams and trained on-site technicians.</li>
+            <li>Secured executive sign-offs and updated panel placards using a standardized, color-coded system.</li>
           </ul>
+          <p><strong>Impact:</strong> Enhanced network reliability and reduced downtime by ensuring every fiber connection is accurately documented.</p>
+          <!-- Link to more info -->
+          <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
+          <small>Authorized personnel only</small></p>
         </article>
-        <!-- You can add additional project items following the same structure -->
+        
+        <!-- IT Connect Enhancement Initiative -->
+        <article class="project-item">
+          <h3>IT Connect Enhancement Initiative</h3>
+          <p><strong>Objective:</strong> Standardize and update location data and equipment documentation across the university.</p>
+          <p><strong>Role & Responsibilities:</strong></p>
+          <ul>
+            <li>Led planning and execution of documentation updates in ITConnect.</li>
+            <li>Ensured clarity and consistency across records to improve operational oversight.</li>
+            <li>Coordinated with multiple departments to streamline resource tracking.</li>
+          </ul>
+          <p><strong>Impact:</strong> Improved data accuracy and operational efficiency campus-wide.</p>
+          <!-- Link to more info -->
+          <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
+          <small>Authorized personnel only</small></p>
+        </article>
+        
+        <!-- Student Onboarding Program -->
+        <article class="project-item">
+          <h3>Student Onboarding Program</h3>
+          <p><strong>Objective:</strong> Develop a cutting-edge onboarding framework with detailed guides and training resources for new student hires.</p>
+          <p><strong>Role & Responsibilities:</strong></p>
+          <ul>
+            <li>Authored dynamic training materials covering both technical procedures and soft skills development.</li>
+            <li>Implemented best practices that reduced ramp-up time and fostered a collaborative environment.</li>
+          </ul>
+          <p><strong>Impact:</strong> Accelerated the learning curve and enhanced team performance through strategic process improvements.</p>
+          <!-- Link to more info -->
+          <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
+          <small>Authorized personnel only</small></p>
+        </article>
+        
+        <!-- Copilot Studio Chatbot Proposal -->
+        <article class="project-item">
+          <h3>Copilot Studio Chatbot Proposal</h3>
+          <p><strong>Objective:</strong> Propose and strategize the integration of an AI-powered chatbot within Microsoft 365 to automate routine inquiries.</p>
+          <p><strong>Role & Responsibilities:</strong></p>
+          <ul>
+            <li>Developed a forward-thinking proposal covering security, compliance, pilot rollout, and training strategies.</li>
+            <li>Outlined clear metrics and pilot strategies to maximize ROI and operational efficiency.</li>
+          </ul>
+          <p><strong>Impact:</strong> Positioned the team to adopt innovative AI solutions that dramatically enhance support capabilities.</p>
+          <!-- Link to more info -->
+          <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
+          <small>Authorized personnel only</small></p>
+        </article>
+        
+        <!-- Wireless Repair & Incident Response Processes -->
+        <article class="project-item">
+          <h3>Wireless Repair & Incident Response Processes</h3>
+          <p><strong>Objective:</strong> Establish robust documentation for wireless repair and incident response protocols to minimize service disruptions.</p>
+          <p><strong>Role & Responsibilities:</strong></p>
+          <ul>
+            <li>Authored clear, step-by-step troubleshooting and escalation procedures.</li>
+            <li>Enhanced cross-department communication to ensure rapid resolution of technical issues.</li>
+          </ul>
+          <p><strong>Impact:</strong> Improved service uptime and operational resilience through systematic process enhancements.</p>
+          <!-- Link to more info -->
+          <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
+          <small>Authorized personnel only</small></p>
+        </article>
+        
+        <!-- Equipment & Vehicle Management SOPs -->
+        <article class="project-item">
+          <h3>Equipment & Vehicle Management SOPs</h3>
+          <p><strong>Objective:</strong> Implement standardized procedures for equipment check-out/return and vehicle usage to ensure accountability and efficiency.</p>
+          <p><strong>Role & Responsibilities:</strong></p>
+          <ul>
+            <li>Designed SOPs that guarantee accountability, safety, and efficiency in resource management.</li>
+            <li>Integrated process automation to significantly reduce manual errors.</li>
+          </ul>
+          <p><strong>Impact:</strong> Elevated operational efficiency and reinforced resource accountability across the department.</p>
+          <!-- Link to more info -->
+          <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
+          <small>Authorized personnel only</small></p>
+        </article>
+        
+        <!-- Orientation, Training & Schedule Coordination -->
+        <article class="project-item">
+          <h3>Orientation, Training & Schedule Coordination</h3>
+          <p><strong>Objective:</strong> Develop an extensive ITS-EI Orientation Guide and innovative scheduling solutions using Microsoft Shifts.</p>
+          <p><strong>Role & Responsibilities:</strong></p>
+          <ul>
+            <li>Compiled essential onboarding resources into an intuitive and engaging guide.</li>
+            <li>Streamlined schedule coordination, enhancing communication and team productivity.</li>
+          </ul>
+          <p><strong>Impact:</strong> Boosted new team member integration and set the stage for sustained operational excellence.</p>
+          <!-- Link to more info -->
+          <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
+          <small>Authorized personnel only</small></p>
+        </article>
+        
+        <!-- Elevator & Area of Refuge Phones in ITConnect -->
+        <article class="project-item">
+          <h3>Elevator & Area of Refuge Phones in ITConnect</h3>
+          <p><strong>Objective:</strong> Reorganize and update phone data in ITConnect by correcting building ownership and updating Master Financial Keys (MFKs).</p>
+          <p><strong>Role & Responsibilities:</strong></p>
+          <ul>
+            <li>Designed structured Excel templates and conducted in-depth data analysis.</li>
+            <li>Collaborated with Customer Service Representatives and various departments to implement necessary updates.</li>
+          </ul>
+          <p><strong>Impact:</strong> Enhanced data accuracy and streamlined stakeholder communication, ensuring ITConnect reflects the latest records.</p>
+          <!-- Link to more info -->
+          <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
+          <small>Authorized personnel only</small></p>
+        </article>
       </div>
     </div>
   </section>
   
-  <!-- Skills Section -->
+  <!-- Advanced Skills Section -->
   <section id="skills" class="section skills">
     <div class="container">
       <h2>Technical & Managerial Skills</h2>
       <div class="skill-list">
         <div class="skill-item">
-          <h3>Project Management</h3>
-          <p>Expert in leading projects from inception to completion using robust methodologies.</p>
+          <h3>Innovative Project Management</h3>
+          <p>Knowledgeable in agile methodologies, strategic planning, and leading cross-functional teams to deliver transformative IT solutions.</p>
         </div>
         <div class="skill-item">
-          <h3>Strategic Planning</h3>
-          <p>Aligning IT projects with business objectives to drive innovation and efficiency.</p>
+          <h3>Advanced Data Analytics & Automation</h3>
+          <p>Proficient in Python scripting, data visualization, and real-time data integration to drive efficiency and reduce errors.</p>
         </div>
         <div class="skill-item">
-          <h3>Team Leadership</h3>
-          <p>Adept at mentoring teams to foster collaboration and operational excellence.</p>
+          <h3>AI & Emerging Technologies</h3>
+          <p>Adept at leveraging AI-powered solutions such as chatbots and machine learning to optimize IT support and operational performance.</p>
         </div>
-        <!-- Add more skills as needed -->
+        <div class="skill-item">
+          <h3>Strategic Communication & Leadership</h3>
+          <p>Skilled at aligning IT projects with business objectives to drive innovation and efficiency, and adept at mentoring teams to foster collaboration and achieve operational excellence.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -86,10 +312,17 @@
       <h2>Testimonials & Recommendations</h2>
       <div class="testimonial-list">
         <div class="testimonial-item">
-          <blockquote>"Ramey's leadership and dedication have significantly improved our project outcomes."</blockquote>
+          <blockquote>"Ramey has consistently demonstrated exceptional dedication, professionalism, and a strong work ethic, balancing a demanding academic schedule with high performance at ITS. His time-management skills and unwavering commitment serve as a role model for his peers."</blockquote>
           <p>- George Stumpf, IT Director</p>
         </div>
-        <!-- Add additional testimonials if desired -->
+        <div class="testimonial-item">
+          <blockquote>"You are simply the BEST, words cannot describe your kindness."</blockquote>
+          <p>- Marianne Holton, Admin Services Specialist</p>
+        </div>
+        <div class="testimonial-item">
+          <blockquote>"Ramey has taken the initiative to drive significant process improvements within our team, developing a comprehensive student handbook and implementing operational enhancements that have increased efficiency and improved outcomes for our student group."</blockquote>
+          <p>- George Stumpf, IT Director</p>
+        </div>
       </div>
     </div>
   </section>
@@ -100,18 +333,31 @@
       <h2>Contact Information</h2>
       <p>Email: <a href="mailto:Ramey-fahal@uiowa.com">Ramey-fahal@uiowa.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/ramey-fahal" target="_blank">/in/ramey-fahal</a></p>
-      <p>Phone: </p>
+      <p>Phone: (319) ***-****</p>
       <button id="ctaButton">Schedule a Meeting</button>
     </div>
   </section>
   
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer class="footer">
     <div class="container">
       <p>&copy; 2025 Ramey Fahal. All rights reserved.</p>
     </div>
   </footer>
   
+  <!-- Floating Buttons: Return Home & Scroll to Top -->
+  <div id="floatButtons">
+    <!-- Return Home button with fade-out -->
+    <div class="btn-circle" id="returnHomeBtn" title="Return to RameyFahal.com">
+      <i class="fa fa-home"></i>
+    </div>
+    <!-- Scroll to Top button -->
+    <div class="btn-circle" id="scrollTopBtn" title="Scroll to Top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+  </div>
+  
+  <!-- JS Script -->
   <script src="project-management.js"></script>
 </body>
 </html>
