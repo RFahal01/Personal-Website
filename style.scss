@@ -1,61 +1,152 @@
-$primary-color: #333;
-$secondary-color: #ffcd00;
-$font-family: 'Roboto', sans-serif;
-
-body {
-    font-family: $font-family;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
-}
-
-header {
-    background-color: $primary-color;
-    color: $secondary-color;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: $secondary-color;
-    text-decoration: none;
-}
-
-section {
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2, h3 {
-    color: $primary-color;
-}
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    text-align: center;
+  }
+  
+  /* Header */
+  header {
+    background-color: #333;
     padding: 10px 0;
-    background-color: $primary-color;
-    color: $secondary-color;
-}
+    color: #ffcd00;
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-brand a {
+        color: #ffcd00;
+        font-size: 1.8em;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      &-nav {
+        list-style: none;
+        display: flex;
+        margin-right: 20px;
+        li {
+          margin: 0 10px;
+          a {
+            color: #ffcd00;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* Hero */
+  .hero {
+    background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    .hero-content {
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.4em;
+        margin-bottom: 30px;
+      }
+      .btn {
+        background-color: #ffcd00;
+        color: #333;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: #e6b800;
+        }
+      }
+    }
+  }
+  
+  /* Sections */
+  section {
+    padding: 60px 0;
+    background-color: #fff;
+    margin-bottom: 20px;
+    &:nth-of-type(even) {
+      background-color: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+    }
+  }
+  
+  /* About */
+  .about p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  /* Skills */
+  .progress {
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+  }
+  .progress-bar {
+    background: #ffcd00;
+    height: 100%;
+    width: 0;
+    transition: width 1.5s ease;
+  }
+  
+  /* Portfolio, etc. */
+  /* ... same structure as style.css ... */
+  
+  /* Inverted Color Mode */
+  .invert-colors {
+    filter: invert(1) hue-rotate(180deg);
+    img {
+      filter: invert(1) hue-rotate(180deg);
+    }
+    .progress-bar {
+      background: #00b0ff;
+    }
+    .btn-primary {
+      background: #00b0ff;
+      border-color: #00b0ff;
+      color: #333;
+    }
+    .single-horizontal-timeline {
+      background: #e1e1e1;
+      border: 1px solid #999;
+    }
+  }
+  

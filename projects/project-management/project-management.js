@@ -5,12 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const authNoBtn = document.getElementById('authNoBtn');
 
   authYesBtn.addEventListener('click', () => {
-    // Close modal if user is authorized
     authModalOverlay.style.display = 'none';
   });
 
   authNoBtn.addEventListener('click', () => {
-    // Redirect or close page if not authorized
     window.location.href = 'https://google.com';
   });
 
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   
-  // IntersectionObserver for fade-in animations on sections
+  // IntersectionObserver for fade-in animations
   const sections = document.querySelectorAll('.section');
   const observerOptions = { threshold: 0.1 };
   const observer = new IntersectionObserver((entries) => {
@@ -42,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(section);
   });
   
-  // CTA button event handler
+  // CTA button
   const ctaButton = document.getElementById('ctaButton');
   ctaButton.addEventListener('click', function() {
     alert('Thank you for your interest! Please contact me at Ramey-fahal@uiowa.com to schedule a meeting.');

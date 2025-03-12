@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Project Management Portfolio - Ramey Fahal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   
   <!-- Font Awesome (for icons) -->
   <link
@@ -17,96 +18,10 @@
   
   <!-- Main CSS -->
   <link rel="stylesheet" href="project-management.css">
-  
-  <style>
-    /* Modal Overlay & Box */
-    #authModalOverlay {
-      position: fixed;
-      top: 0; 
-      left: 0;
-      width: 100vw; 
-      height: 100vh; 
-      background: rgba(0, 0, 0, 0.7);
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      z-index: 9999;
-    }
-    #authModal {
-      background: #fff;
-      color: #333;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    }
-    #authModal h2 {
-      margin-bottom: 1rem;
-    }
-    #authModal button {
-      margin: 0 0.5rem;
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      background: #ffc107;
-      color: #0C1B33;
-      font-weight: bold;
-    }
-    #authModal button:hover {
-      background: #e0a106;
-    }
-
-    /* Return Home & Scroll-to-Top Buttons */
-    #floatButtons {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
-    }
-    #floatButtons .btn-circle {
-      width: 50px; 
-      height: 50px;
-      border-radius: 50%;
-      background: #ffc107;
-      color: #0C1B33;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: background 0.3s, transform 0.3s;
-    }
-    #floatButtons .btn-circle:hover {
-      background: #e0a106;
-      transform: scale(1.1);
-    }
-    #floatButtons .btn-circle a {
-      color: inherit;
-      text-decoration: none;
-      font-size: 20px;
-    }
-    /* Hidden by default, displayed via JS */
-    #scrollTopBtn {
-      display: none;
-    }
-
-    /* Hover effects for headings */
-    #projects:hover h2,
-    #skills:hover h2,
-    #testimonials:hover h2 {
-      background: rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Authorization Modal (initially visible) -->
+  <!-- Authorization Modal (HTML only, no inline styling) -->
   <div id="authModalOverlay">
     <div id="authModal">
       <h2>Authorized Viewers Only</h2>
@@ -142,11 +57,17 @@
     <div class="container">
       <h2>Overview</h2>
       <p>
-        During my tenure at ITS, I have consistently driven process improvements, led cross-functional teams, and implemented innovative solutions that enhanced our IT infrastructure’s reliability, efficiency, and overall performance. My work spans a wide array of projects—from technical infrastructure verifications to comprehensive training and onboarding programs—each meticulously documented and refined to exceed industry standards.
+        During my tenure at ITS, I have consistently driven process improvements, led cross-functional teams, 
+        and implemented innovative solutions that enhanced our IT infrastructure’s reliability, efficiency, 
+        and overall performance. My work spans a wide array of projects—from technical infrastructure verifications 
+        to comprehensive training and onboarding programs—each meticulously documented and refined to exceed 
+        industry standards.
       </p>
       <br>
       <p>
-        This portfolio is a testament to my commitment to excellence, showcasing how I blend strategic vision with advanced technical expertise to solve challenging problems and drive innovation. I push the boundaries to create measurable, high-impact results.
+        This portfolio is a testament to my commitment to excellence, showcasing how I blend strategic vision 
+        with advanced technical expertise to solve challenging problems and drive innovation. I push the boundaries 
+        to create measurable, high-impact results.
       </p>
     </div>
   </section>
@@ -156,8 +77,6 @@
     <div class="container">
       <h2>Key Projects & Achievements</h2>
       <div class="project-list">
-        
-        <!-- Fiber Verification Project -->
         <article class="project-item">
           <h3>Fiber Verification Project (FVP)</h3>
           <p><strong>Objective:</strong> Validate and document campus fiber connectivity using advanced, standardized processes to boost network reliability.</p>
@@ -168,12 +87,10 @@
             <li>Secured executive sign-offs and updated panel placards using a standardized, color-coded system.</li>
           </ul>
           <p><strong>Impact:</strong> Enhanced network reliability and reduced downtime by ensuring every fiber connection is accurately documented.</p>
-          <!-- Link to more info -->
           <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
           <small>Authorized personnel only</small></p>
         </article>
         
-        <!-- IT Connect Enhancement Initiative -->
         <article class="project-item">
           <h3>IT Connect Enhancement Initiative</h3>
           <p><strong>Objective:</strong> Standardize and update location data and equipment documentation across the university.</p>
@@ -184,12 +101,10 @@
             <li>Coordinated with multiple departments to streamline resource tracking.</li>
           </ul>
           <p><strong>Impact:</strong> Improved data accuracy and operational efficiency campus-wide.</p>
-          <!-- Link to more info -->
           <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
           <small>Authorized personnel only</small></p>
         </article>
         
-        <!-- Student Onboarding Program -->
         <article class="project-item">
           <h3>Student Onboarding Program</h3>
           <p><strong>Objective:</strong> Develop a cutting-edge onboarding framework with detailed guides and training resources for new student hires.</p>
@@ -199,12 +114,10 @@
             <li>Implemented best practices that reduced ramp-up time and fostered a collaborative environment.</li>
           </ul>
           <p><strong>Impact:</strong> Accelerated the learning curve and enhanced team performance through strategic process improvements.</p>
-          <!-- Link to more info -->
           <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
           <small>Authorized personnel only</small></p>
         </article>
         
-        <!-- Copilot Studio Chatbot Proposal -->
         <article class="project-item">
           <h3>Copilot Studio Chatbot Proposal</h3>
           <p><strong>Objective:</strong> Propose and strategize the integration of an AI-powered chatbot within Microsoft 365 to automate routine inquiries.</p>
@@ -214,12 +127,10 @@
             <li>Outlined clear metrics and pilot strategies to maximize ROI and operational efficiency.</li>
           </ul>
           <p><strong>Impact:</strong> Positioned the team to adopt innovative AI solutions that dramatically enhance support capabilities.</p>
-          <!-- Link to more info -->
           <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
           <small>Authorized personnel only</small></p>
         </article>
         
-        <!-- Wireless Repair & Incident Response Processes -->
         <article class="project-item">
           <h3>Wireless Repair & Incident Response Processes</h3>
           <p><strong>Objective:</strong> Establish robust documentation for wireless repair and incident response protocols to minimize service disruptions.</p>
@@ -229,12 +140,10 @@
             <li>Enhanced cross-department communication to ensure rapid resolution of technical issues.</li>
           </ul>
           <p><strong>Impact:</strong> Improved service uptime and operational resilience through systematic process enhancements.</p>
-          <!-- Link to more info -->
           <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
           <small>Authorized personnel only</small></p>
         </article>
         
-        <!-- Equipment & Vehicle Management SOPs -->
         <article class="project-item">
           <h3>Equipment & Vehicle Management SOPs</h3>
           <p><strong>Objective:</strong> Implement standardized procedures for equipment check-out/return and vehicle usage to ensure accountability and efficiency.</p>
@@ -244,12 +153,10 @@
             <li>Integrated process automation to significantly reduce manual errors.</li>
           </ul>
           <p><strong>Impact:</strong> Elevated operational efficiency and reinforced resource accountability across the department.</p>
-          <!-- Link to more info -->
           <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
           <small>Authorized personnel only</small></p>
         </article>
         
-        <!-- Orientation, Training & Schedule Coordination -->
         <article class="project-item">
           <h3>Orientation, Training & Schedule Coordination</h3>
           <p><strong>Objective:</strong> Develop an extensive ITS-EI Orientation Guide and innovative scheduling solutions using Microsoft Shifts.</p>
@@ -259,12 +166,10 @@
             <li>Streamlined schedule coordination, enhancing communication and team productivity.</li>
           </ul>
           <p><strong>Impact:</strong> Boosted new team member integration and set the stage for sustained operational excellence.</p>
-          <!-- Link to more info -->
           <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
           <small>Authorized personnel only</small></p>
         </article>
         
-        <!-- Elevator & Area of Refuge Phones in ITConnect -->
         <article class="project-item">
           <h3>Elevator & Area of Refuge Phones in ITConnect</h3>
           <p><strong>Objective:</strong> Reorganize and update phone data in ITConnect by correcting building ownership and updating Master Financial Keys (MFKs).</p>
@@ -274,7 +179,6 @@
             <li>Collaborated with Customer Service Representatives and various departments to implement necessary updates.</li>
           </ul>
           <p><strong>Impact:</strong> Enhanced data accuracy and streamlined stakeholder communication, ensuring ITConnect reflects the latest records.</p>
-          <!-- Link to more info -->
           <p><strong>Learn More:</strong> <a href="#" class="project-link">[Add SharePoint Link Here]</a><br>
           <small>Authorized personnel only</small></p>
         </article>
@@ -348,17 +252,15 @@
   
   <!-- Floating Buttons: Return Home & Scroll to Top -->
   <div id="floatButtons">
-    <!-- Return Home button with fade-out -->
     <div class="btn-circle" id="returnHomeBtn" title="Return to RameyFahal.com">
       <i class="fa fa-home"></i>
     </div>
-    <!-- Scroll to Top button -->
     <div class="btn-circle" id="scrollTopBtn" title="Scroll to Top">
       <i class="fa fa-angle-up"></i>
     </div>
   </div>
   
-  <!-- JS Script -->
+  <!-- External JS -->
   <script src="project-management.js"></script>
 </body>
 </html>
