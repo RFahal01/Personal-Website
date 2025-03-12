@@ -1,34 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Rooms - University of Iowa</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Rooms - University of Iowa</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(245, 245, 220);
+      color: #664321;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #664321;
+      color: rgb(245, 245, 220);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    header nav ul li {
+      margin-left: 10px;
+    }
+    header nav ul li a {
+      background-color: rgb(245, 245, 220);
+      color: #664321;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    header nav ul li a:hover {
+      background-color: #8a5e3a;
+    }
+    main {
+      padding: 20px;
+    }
+    h2 {
+      color: #664321;
+      transition: background 0.3s;
+    }
+    h2:hover {
+      background: rgba(102,67,33,0.2);
+    }
+    #rooms-list {
+      margin-top: 20px;
+    }
+    footer {
+      background-color: #664321;
+      color: rgb(245, 245, 220);
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Authorization Modal */
+    #authModalOverlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.7);
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      z-index: 9999;
+    }
+    #authModal {
+      background: #fff;
+      color: #333;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: center;
+    }
+    #authModal button {
+      margin: 0.5rem;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #8a5e3a;
+      color: #f5f5dc;
+      font-weight: bold;
+    }
+    #authModal button:hover {
+      background: #664321;
+    }
+
+    /* Return Home & Scroll to Top */
+    #floatButtons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .btn-circle {
+      width: 50px; 
+      height: 50px;
+      border-radius: 50%;
+      background: #00ced1;
+      color: rgb(245, 245, 220);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn-circle:hover {
+      background: #008b8b;
+      transform: scale(1.1);
+    }
+    .btn-circle i {
+      font-size: 20px;
+    }
+    #scrollTopBtn {
+      display: none; /* hidden by default */
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="UiowaLogo.jfif" alt="University of Iowa Logo">
-        <h1>University of Iowa IT Rooms</h1>
-        <nav>
-            <ul>
-                <li><a href="projectindex.html">Home</a></li>
-                <li><a href="it-rooms.html">IT Rooms</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="../../index.html">Return to RameyFahal.com</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>IT Rooms Directory</h2>
-        <input type="text" id="search-bar" placeholder="Search for a room or building...">
-        <div id="rooms-list"></div>
-    </main>
-    <footer>
-        <p>&copy; 2024 University of Iowa. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+
+  <!-- Authorization Modal -->
+  <div id="authModalOverlay">
+    <div id="authModal">
+      <h2>Authorized Viewers Only</h2>
+      <p>This page is restricted to authorized viewers. Are you authorized to view this content?</p>
+      <button id="authYesBtn">Yes</button>
+      <button id="authNoBtn">No</button>
+    </div>
+  </div>
+
+  <header>
+    <img src="UiowaLogo.jfif" alt="University of Iowa Logo">
+    <h1>University of Iowa IT Rooms</h1>
+    <nav>
+      <ul>
+        <li><a href="projectindex.html">Home</a></li>
+        <li><a href="it-rooms.html">IT Rooms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../../index.html">Return to RameyFahal.com</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>IT Rooms Directory</h2>
+    <input type="text" id="search-bar" placeholder="Search for a room or building...">
+    <div id="rooms-list"></div>
+  </main>
+  <footer>
+    <p>&copy; 2024 University of Iowa. All rights reserved.</p>
+  </footer>
+
+  <div id="floatButtons">
+    <div class="btn-circle" id="returnHomeBtn" title="Return to RameyFahal.com">
+      <i class="fa fa-home"></i>
+    </div>
+    <div class="btn-circle" id="scrollTopBtn" title="Scroll to Top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+  </div>
+
+  <script>
+    // Authorization Modal
+    const authModalOverlay = document.getElementById('authModalOverlay');
+    const authYesBtn = document.getElementById('authYesBtn');
+    const authNoBtn = document.getElementById('authNoBtn');
+    authYesBtn.addEventListener('click', () => {
+      authModalOverlay.style.display = 'none';
+    });
+    authNoBtn.addEventListener('click', () => {
+      window.location.href = 'https://google.com';
+    });
+
+    // Return Home button fade-out
+    const returnHomeBtn = document.getElementById('returnHomeBtn');
+    returnHomeBtn.addEventListener('click', () => {
+      document.body.style.transition = 'opacity 0.8s';
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = 'https://RameyFahal.com';
+      }, 800);
+    });
+
+    // Scroll-to-Top logic
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        scrollTopBtn.style.display = 'flex';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
-it
