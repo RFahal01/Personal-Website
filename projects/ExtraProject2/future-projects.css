@@ -1,0 +1,103 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ffcd00;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    color: #000;
+    font-weight: 700;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 15px;
+    font-weight: 600;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+nav a:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #ffcd00;
+    font-size: 28px;
+}
+
+section p {
+    line-height: 1.6;
+    color: #000;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    background-color: #ffcd00;
+    padding: 10px;
+    color: #000;
+    font-weight: 600;
+    
+}
+
+#floatButtons {
+    position: fixed;
+    bottom: center;
+    display:inherit;
+    gap: 10px;
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #ffcd00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-circle:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}

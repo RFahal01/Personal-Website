@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="future-projects.css">
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <link rel="stylesheet" href="../../assets/css/float-buttons.css">
+  <link rel="stylesheet" href="../../assets/css/extra-projects.css">
+  <link rel="stylesheet" href="../../assets/css/extra-projects-responsive.css"> 
+  <link rel="stylesheet" href="../../assets/css/extra-projects-desktop.css">
+  <link rel="stylesheet" href="../../assets/css/extra-projects-mobile.css">
+  <link rel="stylesheet" href="../../assets/css/extra-projects-tablet.css">
+  <title>Future Projects</title>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Future Projects</h1>
+    <nav>
+    <!-- ><a href="../../index.html">Return Home</a>-->
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section style="text-align: center;">
+      <h2>Exciting Projects on the Horizon</h2>
+      <p>Stay tuned! We are working on impactful projects that will enhance user experience, streamline IT processes, and introduce innovative solutions.</p>
+      <img src="../../assets/images/extra1.jpg" alt="Coming Soon" style="width: 60%; max-width: 500px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin-top: 20px;">
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Ramey Fahal. All rights reserved.</p>
+  </footer>
+
+  <!-- Float Buttons -->
+  <div id="floatButtons">
+    <div class="btn-circle" id="returnHomeBtn" title="Return to RameyFahal.com">
+      <i class="fa fa-home"></i>
+    </div>
+    <div class="btn-circle" id="scrollTopBtn" title="Scroll to Top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+  </div>
+
+  <!-- External Script for Scroll and Return -->
+  <script>
+    // Return Home Button Logic
+    const returnHomeBtn = document.getElementById('returnHomeBtn');
+    returnHomeBtn.addEventListener('click', () => {
+      document.body.style.transition = 'opacity 0.8s';
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = 'https://RameyFahal.com';
+      }, 800);
+    });
+
+    // Scroll-to-Top Logic
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        scrollTopBtn.style.display = 'flex';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
