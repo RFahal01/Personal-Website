@@ -1265,8 +1265,8 @@ body {
   }
   .contact-form .single-contact-btn .contact-btn,
   .contact-form .single-contact-btn .contact-btn:focus {
-  background-color: #ffcd00; /* Button background color */
-  color: #0C1B33;            /* Text color for contrast 
+  background-color: #ffcd00; /* Button background color 
+  //color: #0C1B33;            /* Text color for contrast 
   margin-top: 0;
   outline: 0 !important;
   border: 0;
