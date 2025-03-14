@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Blog Post 4: Advancements in Cloud Computing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Link to common CSS files -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/blog.css">
-  <link rel="stylesheet" href="../assets/css/header.css">
-  <link rel="stylesheet" href="../assets/css/footer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="future-projects.css">
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <link rel="stylesheet" href="../../assets/css/float-buttons.css">
+  <link rel="stylesheet" href="../../assets/css/extra-projects.css">
+  <link rel="stylesheet" href="../../assets/css/extra-projects-responsive.css"> 
+  <link rel="stylesheet" href="../../assets/css/extra-projects-desktop.css">
+  <link rel="stylesheet" href="../../assets/css/extra-projects-mobile.css">
+  <link rel="stylesheet" href="../../assets/css/extra-projects-tablet.css">
+  <link rel="stylesheet" href="universal.css">
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <h1>Advancements in Cloud Computing</h1>
     <nav>
-      <a href="../index.html">Home</a>
-      <a href="../blog.html">Blog</a>
+      <a href="../../index.html">Home</a>
     </nav>
   </header>
-
-  <!-- MAIN CONTENT -->
   <main>
-    <article>
-      <h2>Exploring the Next Generation of Cloud Technologies</h2>
-      <p>Date: March 22, 2025</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet, nunc ac volutpat auctor, purus nulla lobortis elit, at tempus lectus erat eget metus. Suspendisse potenti.</p>
-      <!-- More detailed post content -->
-    </article>
+    <p><em>Posted on April 10, 2025</em></p>
+    <img src="../../assets/images/extra4.jpg" alt="Cloud Computing">
+    <p>
+      Cloud computing continues to evolve with new services, increased security, and enhanced performance. This post explores the latest advancements that are shaping the future of IT and transforming business operations.
+    </p>
+    <p>
+      Discover how these cloud innovations are driving digital transformation and empowering organizations to scale efficiently.
+    </p>
   </main>
-
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Ramey Fahal. All rights reserved.</p>
   </footer>
+  
+  <!-- Float Buttons -->
+  <div id="floatButtons">
+    <div class="btn-circle" id="returnHomeBtn" title="Return to RameyFahal.com">
+      <i class="fa fa-home"></i>
+    </div>
+    <div class="btn-circle" id="scrollTopBtn" title="Scroll to Top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+  </div>
+  
+  <script>
+    // Return Home Button Logic
+    const returnHomeBtn = document.getElementById('returnHomeBtn');
+    returnHomeBtn.addEventListener('click', () => {
+      document.body.style.transition = 'opacity 0.8s';
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = 'https://RameyFahal.com';
+      }, 800);
+    });
+  
+    // Scroll-to-Top Logic
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        scrollTopBtn.style.display = 'flex';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+  
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

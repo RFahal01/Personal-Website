@@ -66,6 +66,7 @@
   button {
     background: transparent;
     border: 0;
+    color: #ffcd00;
   }
   html, body {
     height: 100%;
@@ -726,116 +727,9 @@
   .clients .clients-area .owl-carousel .owl-item img {
     display: block;
     width: 100%;
-    height: auto;
+    height: auto; 
     border-radius: 0;
   }
-  
-  /*================================================================================
-          11. Contact Section
-  ================================================================================*/
-  .contact {
-    background: #f9fbfd;
-    padding: 50px 0 100px;
-  }
-  .single-contact-box {
-    padding-top: 100px;
-  }
-  .contact-form .form-group {
-    margin-bottom: 20px;
-  }
-  .contact-form .form-control {
-    padding: 25px;
-    font-size: 14px;
-    border: 1px solid #fff;
-    border-radius: 0;
-    box-shadow: none;
-    background: #fff;
-    color: #636a82;
-    resize: none;
-  }
-  .contact-form .single-contact-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    text-transform: capitalize;
-    margin-top: 3px;
-    background: #ffcd00;
-    border: 1px solid #ffcd00;
-    cursor: pointer;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .contact-form .single-contact-btn .contact-btn,
-  .contact-form .single-contact-btn .contact-btn:focus {
-    margin-top: 0;
-    outline: 0 !important;
-    border: 0;
-    color: #fff;
-    border-radius: 0;
-    font-size: 14px;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .single-contact-btn:hover {
-    background: #ffcd00;
-    border: 1px solid #ffcd00;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
-  }
-  .contact-add-head h3 {
-    font-size: 24px;
-    color: #3c4258;
-  }
-  .contact-add-head p {
-    font-size: 16px;
-    text-transform: capitalize;
-    color: #636a82;
-    font-weight: 300;
-    margin-top: 6px;
-  }
-  .contact-add-info {
-    margin: 42px 0 52px;
-  }
-  .single-contact-add-info h3 {
-    color: #636a82;
-    font-weight: 500;
-  }
-  .single-contact-add-info p {
-    color: #999fb3;
-    font-size: 16px;
-    margin-top: 18px;
-  }
-  .single-contact-add-info {
-    margin-bottom: 26px;
-  }
-  .hm-foot-icon ul li {
-    float: left;
-  }
-  .hm-foot-icon ul li a {
-    color: #636a82;
-    margin-right: 18px;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-  }
-  .hm-foot-icon ul li a:hover {
-    color: #ffcd00;
-  }
-  .hm-footer-copyright p {
-    color: #888ea5;
-    text-transform: capitalize;
-    padding: 38px 0;
-  }
-  
   /*================================================================================
           Inverted Colors Functionality
   ================================================================================*/
@@ -1114,7 +1008,122 @@
     padding: 5px;
     border: 1px solid #ffcd00;
   }
-  
+
+  /* SETTINGS PANEL */
+#settings-panel {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s ease-in-out;
+    z-index: 1100;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#settings-panel.open {
+    right: 0;
+}
+
+#settings-toggle {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    background: #ffcd00;
+    color: #000;
+    padding: 12px 18px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    z-index: 1200;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+#settings-panel h3,
+#settings-panel h4 {
+    color: #ffcd00;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#settings-panel input[type="color"],
+#settings-panel select,
+#settings-panel button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border: 2px solid #ffcd00;
+    border-radius: 5px;
+    background-color: #000;
+    color: #ffcd00;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#settings-panel button:hover {
+    background-color: #ffd633;
+    color: #000;
+}
+:root {
+  --base-font-size: 16px;
+}
+
+/* Use the variable for body text */
+body {
+  font-size: var(--base-font-size);
+}
+/* Updated Color Blind Mode for better contrast */
+.color-blind {
+  background-color: #f5f5f5 !important;  /* Light background */
+  color: #a00909 !important;                /* Dark text */
+}
+.color-blind a {
+  color: #0066cc !important;
+}
+
+/* NIGHT MODE */
+.night-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* ANIMATED BACKGROUND */
+.animated-bg {
+    background: radial-gradient(circle, #ffcd00, #ffd633, #fff);
+    animation: pulse 8s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+/* ANIMATED TEXT */
+.animated-text {
+    background: linear-gradient(270deg, #ffcd00, #ffd633, #fff);
+    background-size: 200% 200%;
+    animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} 
   /*================================================================================
           NEW: Preloader Styles
   ================================================================================*/
@@ -1192,5 +1201,135 @@
   
   /*================================================================================
           End of Updated Style.css
-  ================================================================================*/
+
+          
+  /*================================================================================
+          11. Contact Section
+  ================================================================================
+  .contact {
+    background: #000000;
+    padding: 50px 0 100px;
+  }
+  .single-contact-box {
+    padding-top: 100px;
+  }
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+  .contact-btn:focus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-transform: capitalize;
+    margin-top: 3px;
+    background: #ffcd00;
+    border: 1px solid #ffcd00;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+  }
+  .contact-form .form-control {
+    padding: 20px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    background: #1f1f1f;
+    border: 1px solid #ffcd00;
+    border-radius: 0;
+    box-shadow: none;
+    
+    color: #ffcd00;
+    resize: none;
+    transition: background 0.3s ease;
+  }
+  .contact-form .form-control:focus {
+    background: #1f1f1f;
+    border: 1px solid #ffcd00;
+  }
+
+  .contact-form .single-contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-transform: capitalize;
+    margin-top: 3px;
+    background: #ffcd00;
+    border: 1px solid #ffcd00;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .contact-form .single-contact-btn .contact-btn,
+  .contact-form .single-contact-btn .contact-btn:focus {
+  background-color: #ffcd00; /* Button background color */
+  color: #0C1B33;            /* Text color for contrast 
+  margin-top: 0;
+  outline: 0 !important;
+  border: 0;
+  border-radius: 0;
+  font-size: 14px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+  .single-contact-btn:hover {
+    background: #ffcd00;
+    border: 1px solid #ffcd00;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+  }
+  .contact-add-head h3 {
+    font-size: 24px;
+    Color: #ffcd00;;
+  }
+  .contact-add-head p {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffcd00;;
+    font-weight: 300;
+    margin-top: 6px;
+  }
+  .contact-add-info {
+    margin: 42px 0 52px;
+  }
+  .single-contact-add-info h3 {
+    color: #ffcd00;;
+    font-weight: 500;
+  }
+
+  .single-contact-add-info p {
+    color: #ffcd00;
+    font-size: 16px;
+    margin-top: 18px;
+  }
+  .single-contact-add-info {
+    margin-bottom: 26px;
+  }
+  .hm-foot-icon ul li {
+    float: left;
+  }
+  .hm-foot-icon ul li a {
+    color: #ffcd00;
+    margin-right: 18px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .hm-foot-icon ul li a:hover {
+    color: #ffcd00;
   
+  .hm-footer-copyright p {
+    color: #ffcd00;;
+    text-transform: capitalize;
+    padding: 38px 0;
+  }
+  
+
+**

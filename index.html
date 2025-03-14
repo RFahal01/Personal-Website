@@ -155,22 +155,91 @@
   <!--================================================================================
        SETTINGS PANEL & TOGGLE BUTTON (For theme customization)
   ==================================================================================-->
-  <div id="settings-toggle">Settings</div>
-  <div id="settings-panel">
+<div id="settings-toggle">Settings</div>
+
+<div id="settings-panel">
     <h3>Theme Settings</h3>
+
     <label for="primary-color-picker">Primary Color:</label>
     <input type="color" id="primary-color-picker" value="#ffcd00">
+
     <hr>
+
     <h4>Font Size</h4>
     <select id="font-size-selector">
-      <option value="14px">Small</option>
-      <option value="16px" selected>Default</option>
-      <option value="18px">Large</option>
-      <option value="20px">Extra Large</option>
+        <option value="14px">Small</option>
+        <option value="16px" selected>Default</option>
+        <option value="18px">Large</option>
+        <option value="20px">Extra Large</option>
     </select>
+
     <hr>
+
+    <button id="colorBlindMode" class="btn">Color Blind Mode</button>
+    <button id="nightMode" class="btn">Night Mode</button>
+    <button id="animatedBg" class="btn">Animated Background</button>
+
+    <hr>
+
     <button id="reset-settings" class="btn">Reset Settings</button>
-  </div>
+</div>
+  <!-- SCRIPT -->
+  <script>
+    const settingsToggle = document.getElementById('settings-toggle');
+    const settingsPanel = document.getElementById('settings-panel');
+
+    settingsToggle.addEventListener('click', () => {
+      settingsPanel.classList.toggle('open');
+    });
+
+    document.getElementById('colorBlindMode').addEventListener('click', () => {
+      document.body.classList.toggle('color-blind');
+    });
+
+    document.getElementById('nightMode').addEventListener('click', () => {
+      document.body.classList.toggle('night-mode');
+    });
+
+    document.getElementById('animatedBg').addEventListener('click', () => {
+      document.body.classList.toggle('animated-bg');
+    });
+
+    document.getElementById('reset-settings').addEventListener('click', () => {
+      document.body.classList.remove('color-blind', 'night-mode', 'animated-bg');
+    });
+  </script>
+  <!--================================================================================
+          const settingsPanel = document.getElementById('settings-panel');
+          const settingsToggle = document.getElementById('settings-toggle');
+          if(settingsToggle && settingsPanel) {
+            settingsToggle.addEventListener('click', function(){
+              settingsPanel.classList.toggle('open');
+            });
+            const colorPicker = document.getElementById('primary-color-picker');
+            if(colorPicker) {
+              colorPicker.addEventListener('change', function(){
+                document.documentElement.style.setProperty('--primary-color', this.value);
+              });
+            }
+            const fontSizeSelector = document.getElementById('font-size-selector');
+            if(fontSizeSelector) {
+              fontSizeSelector.addEventListener('change', function(){
+                document.documentElement.style.setProperty('--base-font-size', this.value);
+                document.body.style.fontSize = this.value;
+              });
+            }
+            const resetBtn = document.getElementById('reset-settings');
+            if(resetBtn) {
+              resetBtn.addEventListener('click', function(){
+                document.documentElement.style.setProperty('--primary-color', '#ffcd00');
+                document.documentElement.style.setProperty('--base-font-size', '16px');
+                document.body.style.fontSize = '16px';
+                colorPicker.value = '#ffcd00';
+                fontSizeSelector.value = '16px';
+              });
+            }
+          }
+          
   
   <!--================================================================================
        HEADER & NAVIGATION
@@ -196,7 +265,7 @@
               <li class="smooth-menu"><a href="#blog">Blog</a></li>
               <li class="smooth-menu"><a href="#contact">Contact</a></li>
               <li>
-                <a href="javascript:void(0);" id="darkModeToggle" class="dark-mode-btn">Invert Colors</a>
+                <!--<a href="javascript:void(0);" id="darkModeToggle" class="dark-mode-btn">Brighten</a> -->
               </li>
             </ul>
           </div>
@@ -228,7 +297,7 @@
             <p>IT Specialties Supervisor @ The University of Iowa</p>
             <!-- Resume and Cover Letter Download Links -->
             <a href="Ramey_Fahal_Resume.docx" download class="btn btn-primary">Download Resume</a>
-            <a href="Ramey_Fahal_Cover_Letter.docx" download class="btn btn-secondary">Download Cover Letter</a>
+            <!--<a href="Ramey_Fahal_Cover_Letter.docx" download class="btn btn-secondary">Download Cover Letter</a>-->
           </div>
         </div>
       </div>
@@ -667,25 +736,25 @@
               <!-- Repeating similar blocks with different dummy images and links -->
               <div class="col-sm-4">
                 <div class="item">
-                  <img src="assets/images/extra1.jpg" alt="Extra Project 1" class="lazy" data-src="assets/images/extra1.jpg">
+                  <img src="assets/images/UnderConstruction3.jpg" alt="Future Project 1" class="lazy" data-src="assets/images/UnderConstruction3.jpg">
                   <div class="isotope-overlay">
-                    <a href="projects/ExtraProject1/index.html">Extra Project 1</a>
+                    <a href="projects/ExtraProject1/index.html">Future Project 1</a>
                   </div>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="item">
-                  <img src="assets/images/extra2.jpg" alt="Extra Project 2" class="lazy" data-src="assets/images/extra2.jpg">
+                  <img src="assets/images/UnderConstruction2.jpg" alt="Future Project 2" class="lazy" data-src="assets/images/UnderConstruction2.jpg">
                   <div class="isotope-overlay">
-                    <a href="projects/ExtraProject2/index.html">Extra Project 2</a>
+                    <a href="projects/ExtraProject2/index.html">Future Project 2</a>
                   </div>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="item">
-                  <img src="assets/images/extra3.jpg" alt="Extra Project 3" class="lazy" data-src="assets/images/extra3.jpg">
+                  <img src="assets/images/UnderConstruction1.jpg" alt="Future Project 3" class="lazy" data-src="assets/images/UnderConstruction1.jpg">
                   <div class="isotope-overlay">
-                    <a href="projects/ExtraProject3/index.html">Extra Project 2</a>
+                    <a href="projects/ExtraProject3/index.html">Future Project 3</a>
                   </div>
                 </div>
               </div>
@@ -720,12 +789,12 @@
         <!-- Testimonial 2 -->
         <div class="testimonial-item">
           <p>Comming Soon!</p>
-          <h4>- First Name Last Name, Positio</h4>
+          <h4>- First Name Last Name, Position</h4>
         </div>
         <!-- Testimonial 3 -->
         <div class="testimonial-item">
           <p>Comming Soon!</p>
-          <h4>- First Name Last Name, Positio</h4>
+          <h4>- First Name Last Name, Position</h4>
         </div>
       </div>
     </div>
@@ -734,12 +803,16 @@
   <!--================================================================================
        BLOG SECTION
   ==================================================================================-->
+  <div class="section-heading text-center">
+    <h2></h2>
+  </div>  
   <section id="blog" class="blog">
     <div class="section-heading text-center">
       <h2>Blog</h2>
     </div>
     <div class="container">
       <div class="blog-filter text-center">
+        <P>Filter by Category:</p>
         <button data-filter="all" class="active">All</button>
         <button data-filter="tech">Tech</button>
         <button data-filter="leadership">Leadership</button>
@@ -750,58 +823,30 @@
         <div class="blog-post tech">
           <h3>Latest Trends in IT Infrastructure</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna nec nisl semper fermentum.</p>
-          <a href="blog/post1.html">Read More</a>
+          <a href="blog/ComingSoon.html">Coming Soon!</a>
         </div>
         <!-- Blog Post 2 -->
         <div class="blog-post leadership">
           <h3>Effective Leadership in Tech Teams</h3>
           <p>Nulla facilisi. Suspendisse potenti. Curabitur nec sapien non metus pharetra tempus.</p>
-          <a href="blog/post2.html">Read More</a>
+          <a href="blog/ComingSoon.html">Coming Soon!</a>
         </div>
         <!-- Blog Post 3 -->
         <div class="blog-post lifestyle">
           <h3>Balancing Work and Life in a Digital World</h3>
           <p>Sed vitae velit euismod, blandit sapien non, hendrerit nunc. In hac habitasse platea dictumst.</p>
-          <a href="blog/post3.html">Read More</a>
+          <a href="blog/ComingSoon.html">Coming Soon!</a>
         </div>
         <!-- More blog posts to expand functionality -->
         <div class="blog-post tech">
           <h3>Advancements in Cloud Computing</h3>
           <p>Praesent ac lectus ac lorem malesuada euismod. Vivamus fringilla ligula id massa facilisis, ut vehicula justo ornare.</p>
-          <a href="blog/post4.html">Read More</a>
+          <a href="blog/ComingSoon.html.html">Coming Soon!</a>
         </div>
       </div>
     </div>
   </section>
   
-  <!--================================================================================
-       CONTACT SECTION
-  ==================================================================================-->
-  <section id="contact" class="contact">
-    <div class="section-heading text-center">
-      <h2>Contact</h2>
-    </div>
-    <div class="container">
-      <div class="contact-form">
-        <form id="contact-form" action="#" method="post">
-          <div class="form-group">
-            <label for="contact-name">Name</label>
-            <input type="text" id="contact-name" name="name" class="form-control" placeholder="Your Name">
-          </div>
-          <div class="form-group">
-            <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" name="email" class="form-control" placeholder="Your Email">
-          </div>
-          <div class="form-group">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
   
   <!--================================================================================
        FOOTER
@@ -869,7 +914,7 @@
         if(darkModeToggle) {
           darkModeToggle.addEventListener('click', function(){
             document.body.classList.toggle('dark-mode');
-            this.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Invert Colors';
+            this.textContent = document.body.classList.contains('dark-mode') ? 'Reset' : 'Brighten';
           });
         }
         
@@ -982,41 +1027,7 @@
         revealElements.forEach(el => {
           revealObserver.observe(el);
         });
-        
-        //****************************
-        // Settings Panel for Theme Customization
-        //****************************
-        const settingsPanel = document.getElementById('settings-panel');
-        const settingsToggle = document.getElementById('settings-toggle');
-        if(settingsToggle && settingsPanel) {
-          settingsToggle.addEventListener('click', function(){
-            settingsPanel.classList.toggle('open');
-          });
-          const colorPicker = document.getElementById('primary-color-picker');
-          if(colorPicker) {
-            colorPicker.addEventListener('change', function(){
-              document.documentElement.style.setProperty('--primary-color', this.value);
-            });
-          }
-          const fontSizeSelector = document.getElementById('font-size-selector');
-          if(fontSizeSelector) {
-            fontSizeSelector.addEventListener('change', function(){
-              document.documentElement.style.setProperty('--base-font-size', this.value);
-              document.body.style.fontSize = this.value;
-            });
-          }
-          const resetBtn = document.getElementById('reset-settings');
-          if(resetBtn) {
-            resetBtn.addEventListener('click', function(){
-              document.documentElement.style.setProperty('--primary-color', '#ffcd00');
-              document.documentElement.style.setProperty('--base-font-size', '16px');
-              document.body.style.fontSize = '16px';
-              colorPicker.value = '#ffcd00';
-              fontSizeSelector.value = '16px';
-            });
-          }
-        }
-        
+
         //****************************
         // Testimonials Carousel Initialization (Owl Carousel)
         //****************************

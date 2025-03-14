@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Blog Post 2: Effective Leadership in Tech Teams</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Link to common CSS files -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/blog.css">
-  <link rel="stylesheet" href="../assets/css/header.css">
-  <link rel="stylesheet" href="../assets/css/footer.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="future-projects.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/float-buttons.css">
+    <link rel="stylesheet" href="../../assets/css/extra-projects.css">
+    <link rel="stylesheet" href="../../assets/css/extra-projects-responsive.css"> 
+    <link rel="stylesheet" href="../../assets/css/extra-projects-desktop.css">
+    <link rel="stylesheet" href="../../assets/css/extra-projects-mobile.css">
+    <link rel="stylesheet" href="../../assets/css/extra-projects-tablet.css">
+    <link rel="stylesheet" href="universal.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+  </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <h1>Effective Leadership in Tech Teams</h1>
+    <h1>Enhanced Fiber Documentation Project</h1>
     <nav>
-      <a href="../index.html">Home</a>
-      <a href="../blog.html">Blog</a>
+      <a href="../../index.html">Home</a>
     </nav>
   </header>
-
-  <!-- MAIN CONTENT -->
   <main>
-    <article>
-      <h2>Strategies for Leading High-Performing Tech Teams</h2>
-      <p>Date: March 18, 2025</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus, urna a tincidunt malesuada, lacus urna volutpat nunc, vel tempus velit turpis a quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-      <!-- More detailed post content -->
-    </article>
+    <p><em>Posted on March 20, 2025</em></p>
+    <img src="../../assets/images/extra2.jpg" alt="Fiber Documentation Project">
+    <p>
+      The Enhanced Fiber Documentation Project is revolutionizing how we track and manage network infrastructure. This initiative ensures that every fiber connection is documented accurately for better maintenance and rapid troubleshooting.
+    </p>
+    <p>
+      Read on to learn how our innovative system simplifies network management and improves overall connectivity reliability.
+    </p>
   </main>
-
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Ramey Fahal. All rights reserved.</p>
   </footer>
+  
+  <!-- Float Buttons -->
+  <div id="floatButtons">
+    <div class="btn-circle" id="returnHomeBtn" title="Return to RameyFahal.com">
+      <i class="fa fa-home"></i>
+    </div>
+    <div class="btn-circle" id="scrollTopBtn" title="Scroll to Top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+  </div>
+  
+  <script>
+    // Return Home Button Logic
+    const returnHomeBtn = document.getElementById('returnHomeBtn');
+    returnHomeBtn.addEventListener('click', () => {
+      document.body.style.transition = 'opacity 0.8s';
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = 'https://RameyFahal.com';
+      }, 800);
+    });
+  
+    // Scroll-to-Top Logic
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        scrollTopBtn.style.display = 'flex';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+  
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
