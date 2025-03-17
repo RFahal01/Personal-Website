@@ -914,7 +914,6 @@
   ================================================================================*/
   .blog {
     padding: 50px 0 100px;
-    background: #000;
   }
   .blog .section-heading h2 {
     font-size: 28px;
@@ -1137,6 +1136,8 @@
     background-color: #ffd633;
     color: #000;
 }
+
+
 :root {
   --base-font-size: 16px;
 }
