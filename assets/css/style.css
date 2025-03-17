@@ -1054,7 +1054,7 @@
     z-index: 1200;
     transform: translateY(-50%);
   }
-   p {
+  #settings-panel.open p {
     color: #ffcd00;
     font-size: 16px;
     line-height: 1.8;
