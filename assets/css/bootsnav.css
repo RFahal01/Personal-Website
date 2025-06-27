@@ -206,7 +206,7 @@ li.close-full-menu{
     padding-bottom: 30px;
 }
 
-/* Atribute Navigation
+/* Attribute Navigation
 =================================*/
 .attr-nav{
     float: right;
@@ -700,7 +700,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         display: block;
     }
     
-    /* Atribute Navigation
+    /* Attribute Navigation
     =================================*/    
     .attr-nav > ul > li.dropdown ul.dropdown-menu{
         margin-top: 0;
