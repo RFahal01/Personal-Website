@@ -1,3 +1,16 @@
+// Helper used by both the page logic and Jest tests to filter rooms by a search
+// term.  The search is case insensitive and checks several fields on the room
+// object.
+function filterRooms(rooms, term) {
+  const searchTerm = term.toLowerCase();
+  return rooms.filter(room =>
+    room.Location.toLowerCase().includes(searchTerm) ||
+    room['Room Number'].toLowerCase().includes(searchTerm) ||
+    room['Building Number'].toLowerCase().includes(searchTerm) ||
+    room.Abbreviation.toLowerCase().includes(searchTerm)
+  );
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const roomsList = document.getElementById('rooms-list');
     const searchBar = document.getElementById('search-bar');
@@ -297,25 +310,22 @@ document.addEventListener('DOMContentLoaded', function () {
       displayRooms(roomsData);
     
       searchBar.addEventListener('keyup', function () {
-        const searchTerm = searchBar.value.toLowerCase();
-        const filteredRooms = roomsData.filter(room => {
-          return (
-            room.Location.toLowerCase().includes(searchTerm) ||
-            room['Room Number'].toLowerCase().includes(searchTerm) ||
-            room['Building Number'].toLowerCase().includes(searchTerm) ||
-            room.Abbreviation.toLowerCase().includes(searchTerm)
-          );
-        });
+        const filteredRooms = filterRooms(roomsData, searchBar.value);
         displayRooms(filteredRooms);
       });
     });
     
-    function showDirections(index) {
-      const directionsDiv = document.getElementById(`directions-${index}`);
-      if (directionsDiv.style.display === 'none') {
-        directionsDiv.style.display = 'block';
-      } else {
-        directionsDiv.style.display = 'none';
-    }
+function showDirections(index) {
+  const directionsDiv = document.getElementById(`directions-${index}`);
+  if (directionsDiv.style.display === 'none') {
+    directionsDiv.style.display = 'block';
+  } else {
+    directionsDiv.style.display = 'none';
+  }
+}
+
+// Export for Jest testing in Node environments without affecting browser usage.
+if (typeof module !== 'undefined') {
+  module.exports = { filterRooms };
 }
     
